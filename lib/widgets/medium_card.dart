@@ -12,6 +12,20 @@ class MediumCard extends StatefulWidget {
 }
 
 class _MediumCardState extends State<MediumCard> {
+  List<Medium> _favoriteMedium = [];
+
+  bool _isFavorite(Medium medium) {
+    return _favoriteMedium.contains(medium);
+  }
+
+  void _toggleFavorite(Medium medium) {
+    setState(() {
+      _favoriteMedium.contains(medium)
+          ? _favoriteMedium.remove(medium)
+          : _favoriteMedium.add(medium);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -45,7 +59,15 @@ class _MediumCardState extends State<MediumCard> {
                 iconSize: 24,
                 onPressed: () {},
                 color: Theme.of(context).accentColor,
-                icon: Icon(Icons.favorite_border),
+                icon: _isFavorite(widget.medium)
+                    ? IconButton(
+                        onPressed: () => _toggleFavorite(widget.medium),
+                        icon: Icon(Icons.favorite),
+                      )
+                    : IconButton(
+                        onPressed: () => _toggleFavorite(widget.medium),
+                        icon: Icon(Icons.favorite_border),
+                      ),
               ),
               IconButton(
                 iconSize: 24,

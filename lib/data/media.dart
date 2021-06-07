@@ -39,7 +39,7 @@ List<Medium> media = [
       'Armazenar à temperatura ambiente',
     ],
     whatState: FisicalState.solid,
-    ps: 'Para o Caldo Batata Dextrose (CBA), basta não adicionar o ágar.',
+    ps: 'Para o Caldo Batata Dextrose (CBD), basta não adicionar o ágar.',
   ),
   Medium(
     initials: 'CFN',
