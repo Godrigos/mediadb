@@ -38,7 +38,7 @@ class _MediumCardState extends State<MediumCard> {
         ),
         subtitle: Text(widget.medium.longName),
         trailing: SizedBox(
-          width: 100,
+          width: MediaQuery.of(context).size.width * 0.24,
           child: Row(
             children: [
               IconButton(

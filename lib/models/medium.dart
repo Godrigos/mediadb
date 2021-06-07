@@ -61,7 +61,7 @@ class Medium {
 
   String setMediumState() {
     if (this.isComplement) {
-      return 'Solução complementar para outros meios de cultura';
+      return 'Solução complementar para outro meio';
     } else {
       switch (this.whatState) {
         case FisicalState.liquid:

@@ -39,6 +39,7 @@ List<Medium> media = [
       'Armazenar à temperatura ambiente',
     ],
     whatState: FisicalState.solid,
+    ps: 'Para o Caldo Batata Dextrose (CBA), basta não adicionar o ágar.',
   ),
   Medium(
     initials: 'CFN',
@@ -141,7 +142,7 @@ List<Medium> media = [
     ],
     whatState: FisicalState.liquid,
     reference: 'https://www.ncbi.nlm.nih.gov/pubmed/14888646',
-    ps: 'Com o acréscimo de 15g de ágar, temos o meio em estado sólido.',
+    ps: 'Com o acréscimo de 15g/L de ágar, temos o meio em estado sólido.',
   ),
   Medium(
     initials: 'MC',
@@ -364,6 +365,7 @@ List<Medium> media = [
       'Armazenar à temperatura ambiente.',
     ],
     whatState: FisicalState.liquid,
+    ps: 'Com o acréscimo de 15g/L de ágar, temos o meio em estado sólido.',
   ),
   Medium(
     initials: 'SMn',
@@ -382,9 +384,10 @@ List<Medium> media = [
       'Completar o volume para 1 litro.',
       'Ajustar o pH conforme necessário.',
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
-      'Armazenar à temperatura ambiente.',
+      'Armazenar a solução em frasco escuro a 4℃.',
     ],
     whatState: FisicalState.liquid,
+    ps: 'Utilizada no meio NfB.',
     isComplement: true,
   ),
   Medium(
@@ -454,6 +457,7 @@ List<Medium> media = [
           'então a solução em frasco escuro a 4℃ sob clorofórmio (5µL).',
     ],
     whatState: FisicalState.liquid,
+    ps: 'Utilizada no Meio Completo.',
     isComplement: true,
   ),
   Medium(
@@ -473,6 +477,7 @@ List<Medium> media = [
           'então a solução em frasco escuro a 4℃ sob clorofórmio (5µL).',
     ],
     whatState: FisicalState.liquid,
+    ps: 'Utilizada no meio NfB.',
     isComplement: true,
   ),
   Medium(

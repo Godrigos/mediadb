@@ -53,17 +53,17 @@ class MediumDetailScreen extends StatelessWidget {
                   context,
                   IngredientList(medium: medium),
                   MediaQuery.of(context).size.height * 0.25,
-                  MediaQuery.of(context).size.width * 0.80,
+                  MediaQuery.of(context).size.width * 0.85,
                 ),
                 _createSectionTitle(context, 'Preparo'),
                 _createSectionContainer(
                   context,
                   StepsList(medium: medium),
                   MediaQuery.of(context).size.height * 0.43,
-                  MediaQuery.of(context).size.width * 0.80,
+                  MediaQuery.of(context).size.width * 0.85,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.80,
+                  width: MediaQuery.of(context).size.width * 0.85,
                   child: ListTile(
                     leading: CircleAvatar(
                       backgroundColor: Colors.transparent,
@@ -74,6 +74,33 @@ class MediumDetailScreen extends StatelessWidget {
                       medium.setMediumState(),
                       style: TextStyle(fontWeight: FontWeight.normal),
                     ),
+                    trailing: medium.ps != ''
+                        ? IconButton(
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text('Observação'),
+                                    content: Text(medium.ps),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text('Fechar'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                            icon: Icon(
+                              Icons.info,
+                              color: Colors.blue,
+                            ),
+                          )
+                        : null,
                   ),
                 ),
               ],
