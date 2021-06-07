@@ -93,7 +93,7 @@ List<Medium> media = [
   ),
   Medium(
     initials: 'DYGS',
-    longName: 'Dextrose Yeast Glucose Sucrose',
+    longName: 'Dextrose Yeast Glutamine Sucrose',
     ingredients: {
       'Dextrose': Quantity(amount: 2, unit: 'g'),
       'Peptona': Quantity(amount: 1.5, unit: 'g'),

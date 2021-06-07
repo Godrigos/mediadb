@@ -12,17 +12,13 @@ class MediumCard extends StatefulWidget {
 }
 
 class _MediumCardState extends State<MediumCard> {
-  List<Medium> _favoriteMedium = [];
-
   bool _isFavorite(Medium medium) {
-    return _favoriteMedium.contains(medium);
+    return medium.isFavorite;
   }
 
   void _toggleFavorite(Medium medium) {
     setState(() {
-      _favoriteMedium.contains(medium)
-          ? _favoriteMedium.remove(medium)
-          : _favoriteMedium.add(medium);
+      medium.isFavorite ? medium.isFavorite = false : medium.isFavorite = true;
     });
   }
 
@@ -51,33 +47,17 @@ class _MediumCardState extends State<MediumCard> {
           style: Theme.of(context).textTheme.headline6,
         ),
         subtitle: Text(widget.medium.longName),
-        trailing: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.24,
-          child: Row(
-            children: [
-              IconButton(
-                iconSize: 24,
-                onPressed: () {},
-                color: Theme.of(context).accentColor,
-                icon: _isFavorite(widget.medium)
-                    ? IconButton(
-                        onPressed: () => _toggleFavorite(widget.medium),
-                        icon: Icon(Icons.favorite),
-                      )
-                    : IconButton(
-                        onPressed: () => _toggleFavorite(widget.medium),
-                        icon: Icon(Icons.favorite_border),
-                      ),
+        trailing: _isFavorite(widget.medium)
+            ? IconButton(
+                onPressed: () => _toggleFavorite(widget.medium),
+                icon: Icon(Icons.favorite),
+                color: Colors.redAccent,
+              )
+            : IconButton(
+                onPressed: () => _toggleFavorite(widget.medium),
+                icon: Icon(Icons.favorite_border),
+                color: Colors.redAccent,
               ),
-              IconButton(
-                iconSize: 24,
-                icon: const Icon(Icons.delete),
-                color: Theme.of(context).errorColor,
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }

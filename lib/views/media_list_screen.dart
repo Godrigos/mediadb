@@ -4,6 +4,7 @@ import '../data/media.dart';
 
 class MediaScreen extends StatelessWidget {
   final mediaList = [...media];
+  final favoriteList = [];
 
   @override
   Widget build(BuildContext context) {
