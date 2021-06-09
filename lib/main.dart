@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import '../views/media_list_screen.dart';
 import '../utils/app_routes.dart';
