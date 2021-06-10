@@ -166,8 +166,34 @@ const List<Medium> media = const [
     reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
   ),
   Medium(
-    initials: 'ISP4',
+    initials: 'ISP3',
     longName: 'International Streptomyces Project Medium 3',
+    ingredients: {
+      'Aveia': Quantity(amount: 20, unit: 'g'),
+      'Solução Traços': Quantity(amount: 1, unit: 'mL'),
+      'Ágar': Quantity(amount: 18, unit: 'g'),
+      'dH₂O': Quantity(amount: 1, unit: 'L'),
+      'pH': Quantity(amount: 7.2, unit: ''),
+    },
+    steps: [
+      'Ferve-se a aveia em 800 mL água destilada no microondas ' +
+          '(em baixa potência) por 20 minutos',
+      'Depois passa-se o mingau resultante por um coador, ' +
+          'descartando-se os flocos retidos.',
+      'Adicionar os ingredientes ao caldo da aveia.',
+      'Misturar bem até diluir todos os ingredientes.',
+      'Completar o volume para 1 litro.',
+      'Ajustar o pH conforme necessário.',
+      'O ágar deve ser pesado e colocado nos frascos sem meio, o qual ' +
+          'é adicionado sobre o ágar.',
+      'Esterilizar em autoclave por 20 minutos a 121 ℃.',
+      'Armazenar à temperatura ambiente.',
+    ],
+    whatState: FisicalState.solid,
+  ),
+  Medium(
+    initials: 'ISP4',
+    longName: 'International Streptomyces Project Medium 4',
     ingredients: {
       'Amido Solúvel': Quantity(amount: 10, unit: 'g'),
       'K₂HPO₄': Quantity(amount: 1, unit: 'g'),
@@ -175,9 +201,7 @@ const List<Medium> media = const [
       'NaCl': Quantity(amount: 1, unit: 'g'),
       '(NH₄)₂SO₄': Quantity(amount: 2, unit: 'g'),
       'CaCo₃': Quantity(amount: 2, unit: 'g'),
-      'FeSO₄': Quantity(amount: 1, unit: 'mg'),
-      'MnCl₂': Quantity(amount: 1, unit: 'mg'),
-      'ZnSO₄': Quantity(amount: 1, unit: 'mg'),
+      'Solução Traços': Quantity(amount: 1, unit: 'mL'),
       'Ágar': Quantity(amount: 20, unit: 'g'),
       'dH₂O': Quantity(amount: 1, unit: 'L'),
       'pH': Quantity(amount: 7.2, unit: ''),
@@ -194,6 +218,30 @@ const List<Medium> media = const [
     ],
     whatState: FisicalState.solid,
     reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
+  ),
+  Medium(
+    initials: 'ISP5',
+    longName: 'International Streptomyces Project Medium 5',
+    ingredients: {
+      'L-aspargina': Quantity(amount: 1, unit: 'g'),
+      'Glicerol': Quantity(amount: 10, unit: 'mL'),
+      'K₂HPO₄': Quantity(amount: 1, unit: 'g'),
+      'Solução Traços': Quantity(amount: 1, unit: 'mL'),
+      'Ágar': Quantity(amount: 20, unit: 'g'),
+      'dH₂O': Quantity(amount: 1, unit: 'L'),
+      'pH': Quantity(amount: 7.2, unit: ''),
+    },
+    steps: [
+      'Adicionar os ingredientes em 800mL de água destilada.',
+      'Misturar bem até diluir todos os ingredientes.',
+      'Completar o volume para 1 litro.',
+      'Ajustar o pH conforme necessário.',
+      'O ágar deve ser pesado e colocado nos frascos sem meio, o qual ' +
+          'é adicionado sobre o ágar.',
+      'Esterilizar em autoclave por 20 minutos a 121 ℃.',
+      'Armazenar à temperatura ambiente.',
+    ],
+    whatState: FisicalState.solid,
   ),
   Medium(
     initials: 'LB',
@@ -509,6 +557,26 @@ const List<Medium> media = const [
     ],
     whatState: FisicalState.liquid,
     ps: 'Os 0,952g de MgCl₂ podem ser substituídos por 1,204g de MgSO₄.',
+  ),
+  Medium(
+    initials: 'ST',
+    longName: 'Solução Traços',
+    ingredients: {
+      'FeSO₄': Quantity(amount: 1, unit: 'mg'),
+      'MnCl₂': Quantity(amount: 1, unit: 'mg'),
+      'ZnSO₄': Quantity(amount: 1, unit: 'mg'),
+      'dH₂O': Quantity(amount: 100, unit: 'mL'),
+    },
+    steps: [
+      'Adicionar os ingredientes em 80mL de água destilada.',
+      'Misturar bem até diluir todos os ingredientes.',
+      'Completar o volume para 100mL.',
+      'Esterilizar em autoclave por 20 minutos a 121 ℃.',
+      'Armazenar à temperatura ambiente.',
+    ],
+    whatState: FisicalState.liquid,
+    ps: 'Utilizada nos meios ISP 3, 4 e 5.',
+    isComplement: true,
   ),
   Medium(
     initials: 'SV1',
