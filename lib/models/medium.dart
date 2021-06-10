@@ -17,8 +17,8 @@ class Medium {
     required this.longName,
     required this.ingredients,
     required this.steps,
+    required this.whatState,
     this.reference = '',
-    this.whatState = FisicalState.liquid,
     this.isComplement = false,
     this.ps = '',
     this.isFavorite = false,
@@ -95,5 +95,5 @@ class Quantity {
     required this.unit,
   });
 
-  String toString() => '$amount$unit';
+  String toString() => '$amount $unit';
 }

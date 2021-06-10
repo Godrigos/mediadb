@@ -54,7 +54,7 @@ List<Medium> media = [
       'As folhas não podem ser de limoeiro.',
       'Lavar as folhas de Citrus e pesar a quantidade certa.',
       'Autoclavar as folhas por 20 minutos a 121 ℃.',
-      'Coar o líquido e completar para 1 L.',
+      'Coar o líquido e completar o volume para 1 L.',
       'Adicionar 20g de Dextrose e dissolver.',
       'Ajustar o pH conforme necessário.',
       'O ágar deve ser pesado e colocado nos frascos sem meio, o qual ' +
@@ -120,6 +120,80 @@ List<Medium> media = [
     reference: 'Rodrigues Neto J, Malavolta VA Jr, Victor O (1986). ' +
         'Meio simples para o isolamento e cultivo de Xanthomonas campestris ' +
         'pv. citri tipo B. Summa Phytopathol 12:32',
+  ),
+  Medium(
+    initials: 'ISP1',
+    longName: 'International Streptomyces Project Medium 1',
+    ingredients: {
+      'Caseína': Quantity(amount: 5, unit: 'g'),
+      'Extrato de Levedura': Quantity(amount: 3, unit: 'g'),
+      'dH₂O': Quantity(amount: 1, unit: 'L'),
+      'pH': Quantity(amount: 7.0, unit: ''),
+    },
+    steps: [
+      'Adicionar os ingredientes em 800mL de água destilada.',
+      'Misturar bem até diluir todos os ingredientes.',
+      'Completar o volume para 1 litro.',
+      'Ajustar o pH conforme necessário.',
+      'Esterilizar em autoclave por 20 minutos a 121 ℃.',
+      'Armazenar à temperatura ambiente.',
+    ],
+    whatState: FisicalState.liquid,
+    reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
+  ),
+  Medium(
+    initials: 'ISP2',
+    longName: 'International Streptomyces Project Medium 2',
+    ingredients: {
+      'Dextrose': Quantity(amount: 4, unit: 'g'),
+      'Extrato de Levedura': Quantity(amount: 4, unit: 'g'),
+      'Extrato de Malte': Quantity(amount: 10, unit: 'g'),
+      'Ágar': Quantity(amount: 20, unit: 'g'),
+      'dH₂O': Quantity(amount: 1, unit: 'L'),
+      'pH': Quantity(amount: 7.2, unit: ''),
+    },
+    steps: [
+      'Adicionar os ingredientes em 800mL de água destilada.',
+      'Misturar bem até diluir todos os ingredientes.',
+      'Completar o volume para 1 litro.',
+      'Ajustar o pH conforme necessário.',
+      'O ágar deve ser pesado e colocado nos frascos sem meio, o qual ' +
+          'é adicionado sobre o ágar.',
+      'Esterilizar em autoclave por 20 minutos a 121 ℃.',
+      'Armazenar à temperatura ambiente.',
+    ],
+    whatState: FisicalState.solid,
+    reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
+  ),
+  Medium(
+    initials: 'ISP4',
+    longName: 'International Streptomyces Project Medium 3',
+    ingredients: {
+      'Amido Solúvel': Quantity(amount: 10, unit: 'g'),
+      'K₂HPO₄': Quantity(amount: 1, unit: 'g'),
+      'MgSO₄': Quantity(amount: 1, unit: 'g'),
+      'NaCl': Quantity(amount: 1, unit: 'g'),
+      '(NH₄)₂SO₄': Quantity(amount: 2, unit: 'g'),
+      'CaCo₃': Quantity(amount: 2, unit: 'g'),
+      'FeSO₄': Quantity(amount: 1, unit: 'mg'),
+      'MnCl₂': Quantity(amount: 1, unit: 'mg'),
+      'ZnSO₄': Quantity(amount: 1, unit: 'mg'),
+      'Ágar': Quantity(amount: 20, unit: 'g'),
+      'dH₂O': Quantity(amount: 1, unit: 'L'),
+      'pH': Quantity(amount: 7.2, unit: ''),
+    },
+    steps: [
+      'Adicionar os ingredientes em 800mL de água destilada.',
+      'Misturar bem até diluir todos os ingredientes.',
+      'Completar o volume para 1 litro.',
+      'Ajustar o pH conforme necessário.',
+      'O ágar deve ser pesado e colocado nos frascos sem meio, o qual ' +
+          'é adicionado sobre o ágar.',
+      'Esterilizar em autoclave por 20 minutos a 121 ℃.',
+      'Armazenar à temperatura ambiente.',
+    ],
+    whatState: FisicalState.solid,
+    reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
   ),
   Medium(
     initials: 'LB',
@@ -347,7 +421,7 @@ List<Medium> media = [
   ),
   Medium(
     initials: 'SG',
-    longName: 'Soy Glucose',
+    longName: 'Spermatogonial Culture Medium',
     ingredients: {
       'Dextrose': Quantity(amount: 20, unit: 'g'),
       'Extrato de Levedura': Quantity(amount: 5, unit: 'g'),
