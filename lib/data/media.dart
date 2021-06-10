@@ -1,6 +1,6 @@
 import '../models/medium.dart';
 
-List<Medium> media = [
+const List<Medium> media = const [
   Medium(
     initials: 'AA',
     longName: 'Ágar Água',

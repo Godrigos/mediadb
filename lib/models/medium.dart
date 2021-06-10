@@ -10,9 +10,8 @@ class Medium {
   final FisicalState whatState;
   final bool isComplement;
   final String ps;
-  late bool isFavorite;
 
-  Medium({
+  const Medium({
     required this.initials,
     required this.longName,
     required this.ingredients,
@@ -21,7 +20,6 @@ class Medium {
     this.reference = '',
     this.isComplement = false,
     this.ps = '',
-    this.isFavorite = false,
   });
 
   ExactAssetImage setBGImage() {
