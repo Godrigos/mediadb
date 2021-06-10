@@ -190,6 +190,7 @@ const List<Medium> media = const [
       'Armazenar à temperatura ambiente.',
     ],
     whatState: FisicalState.solid,
+    reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
   ),
   Medium(
     initials: 'ISP4',
@@ -242,6 +243,7 @@ const List<Medium> media = const [
       'Armazenar à temperatura ambiente.',
     ],
     whatState: FisicalState.solid,
+    reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
   ),
   Medium(
     initials: 'LB',
