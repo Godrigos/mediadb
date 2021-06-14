@@ -1,6 +1,6 @@
 import '../models/medium.dart';
 
-const List<Medium> media = const [
+List<Medium> media = [
   Medium(
     initials: 'AA',
     longName: 'Ágar Água',
@@ -63,7 +63,12 @@ const List<Medium> media = const [
       'Armazenar à temperatura ambiente.',
     ],
     whatState: FisicalState.solid,
-    reference: 'https://doi.org/10.1016/j.mimet.2009.11.014',
+    reference: 'J.G. Figueiredo, E.H. Goulin, F. Tanaka, D. Stringari, ' +
+        'V. Kava-Cordeiro, L.V. Galli-Terasawa, C.C. Staats, A. Schrank, ' +
+        'C. Glienke. Agrobacterium tumefaciens-mediated transformation ' +
+        'of Guignardia citricarpa. Journal of Microbiological Methods. ' +
+        '80 (2): 143:147. 2010. ISSN 0167-7012. ' +
+        'https://doi.org/10.1016/j.mimet.2009.11.014.',
   ),
   Medium(
     initials: 'CzYA',
@@ -265,7 +270,10 @@ const List<Medium> media = const [
       'Armazenar à temperatura ambiente.',
     ],
     whatState: FisicalState.liquid,
-    reference: 'https://www.ncbi.nlm.nih.gov/pubmed/14888646',
+    reference: 'Bertani G. Studies on lysogenesis. I. The mode of phage ' +
+        'liberation by lysogenic Escherichia coli. J Bacteriol. 1951 Sep;' +
+        '62(3):293-300. doi: 10.1128/jb.62.3.293-300.1951. PMID: 14888646; ' +
+        'PMCID: PMC386127.',
     ps: 'Com o acréscimo de 15g/L de ágar, temos o meio em estado sólido.',
   ),
   Medium(
@@ -420,7 +428,10 @@ const List<Medium> media = const [
       'Armazenar à temperatura ambiente.',
     ],
     whatState: FisicalState.semisolid,
-    reference: 'http://collection.ibppm.ru/nfb-medium.html',
+    reference: 'Hartmann A., Baldani J.I. The genus Azospirillum. ' +
+        'The Prokaryotes, V. 5: Proteobacteria Alpha and Beta Subclasses' +
+        'Eds. M. Dworkin, S. Falkow, E. Rosenberg, K.H. Schleifer, E. ' +
+        'Stackebrandt. – Springer Verlag, New York, USA, 2006. P. 115–140.',
     ps: 'O meio pode ser líquido, semi-sólido ou sólido de acordo ' +
         'com a quantidade de ágar adicionado.',
   ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class Medium {
+class Medium with ChangeNotifier {
   final String initials;
   final String longName;
   final Map<String, Quantity> ingredients;
@@ -10,8 +10,9 @@ class Medium {
   final FisicalState whatState;
   final bool isComplement;
   final String ps;
+  bool isFavorite;
 
-  const Medium({
+  Medium({
     required this.initials,
     required this.longName,
     required this.ingredients,
@@ -20,6 +21,7 @@ class Medium {
     this.reference = '',
     this.isComplement = false,
     this.ps = '',
+    this.isFavorite = false,
   });
 
   ExactAssetImage setBGImage() {
@@ -75,6 +77,11 @@ class Medium {
           return 'Estado do meio indefinido';
       }
     }
+  }
+
+  void toggleFavorite() {
+    isFavorite = !isFavorite;
+    notifyListeners();
   }
 }
 

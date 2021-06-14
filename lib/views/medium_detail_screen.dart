@@ -53,17 +53,17 @@ class MediumDetailScreen extends StatelessWidget {
                   context,
                   IngredientList(medium: medium),
                   MediaQuery.of(context).size.height * 0.25,
-                  MediaQuery.of(context).size.width * 0.85,
+                  MediaQuery.of(context).size.width * 0.9,
                 ),
                 _createSectionTitle(context, 'Preparo'),
                 _createSectionContainer(
                   context,
                   StepsList(medium: medium),
                   MediaQuery.of(context).size.height * 0.43,
-                  MediaQuery.of(context).size.width * 0.85,
+                  MediaQuery.of(context).size.width * 0.9,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.85,
+                  width: MediaQuery.of(context).size.width * 0.95,
                   child: ListTile(
                     leading: CircleAvatar(
                       backgroundColor: Colors.transparent,
@@ -74,33 +74,75 @@ class MediumDetailScreen extends StatelessWidget {
                       medium.setMediumState(),
                       style: TextStyle(fontWeight: FontWeight.normal),
                     ),
-                    trailing: medium.ps != ''
-                        ? IconButton(
+                    trailing: Container(
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      child: Row(
+                        children: [
+                          IconButton(
                             onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: Text('Observação'),
-                                    content: Text(medium.ps),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text('Fechar'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
+                              if (medium.ps != '')
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text('Observação'),
+                                      content: Text(medium.ps),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text('Fechar'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
                             },
-                            icon: Icon(
-                              Icons.info,
-                              color: Colors.blue,
-                            ),
-                          )
-                        : null,
+                            icon: medium.ps != ''
+                                ? Icon(
+                                    Icons.info,
+                                    color: Colors.blue,
+                                  )
+                                : Icon(
+                                    Icons.info_outline,
+                                    color: Colors.grey,
+                                  ),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              if (medium.reference != '')
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text('Referência'),
+                                      content: Text(medium.reference),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text('Fechar'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                            },
+                            icon: medium.reference != ''
+                                ? Icon(
+                                    Icons.note,
+                                    color: Colors.blue,
+                                  )
+                                : Icon(
+                                    Icons.note_outlined,
+                                    color: Colors.grey,
+                                  ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ],
