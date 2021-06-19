@@ -1,0 +1,6 @@
+{
+    "appTitle": "Culture Media",
+    "@appTitle": {
+      "description": "The application main screen title."
+    }
+}

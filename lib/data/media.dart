@@ -547,6 +547,9 @@ List<Medium> media = [
     ],
     whatState: FisicalState.liquid,
     ps: 'Os 0,952g de MgCl₂ podem ser substituídos por 1,204g de MgSO₄.',
+    reference: 'Hanahan, D. (1983). Studies on transformation of ' +
+        'Escherichia coli with plasmids. Journal of Molecular Biology. ' +
+        '166 (4): 557–580. doi:10.1016/S0022-2836(83)80284-8. PMID 6345791',
   ),
   Medium(
     initials: 'SOC',
@@ -570,6 +573,9 @@ List<Medium> media = [
     ],
     whatState: FisicalState.liquid,
     ps: 'Os 0,952g de MgCl₂ podem ser substituídos por 1,204g de MgSO₄.',
+    reference: 'Hanahan, D. (1983). Studies on transformation of ' +
+        'Escherichia coli with plasmids. Journal of Molecular Biology. ' +
+        '166 (4): 557–580. doi:10.1016/S0022-2836(83)80284-8. PMID 6345791',
   ),
   Medium(
     initials: 'ST',
@@ -677,5 +683,17 @@ List<Medium> media = [
       'Armazenar à temperatura ambiente.',
     ],
     whatState: FisicalState.solid,
+  ),
+  Medium(
+    initials: 'DUMMY',
+    longName: 'Entrada de teste',
+    ingredients: {
+      'dH₂O': Quantity(amount: 1, unit: 'L'),
+    },
+    steps: [
+      'Beba...',
+    ],
+    whatState: FisicalState.liquid,
+    isFavorite: true,
   ),
 ];

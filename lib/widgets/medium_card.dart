@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+
 import '../utils/app_routes.dart';
 import '../models/medium.dart';
 
-class MediumCard extends StatelessWidget {
+class MediumCard extends StatefulWidget {
   final Medium medium;
 
   const MediumCard({required this.medium});
 
+  @override
+  _MediumCardState createState() => _MediumCardState();
+}
+
+class _MediumCardState extends State<MediumCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -19,19 +25,35 @@ class MediumCard extends StatelessWidget {
         onTap: () {
           Navigator.of(context).pushNamed(
             AppRoutes.MEDIUM_DETAIL,
-            arguments: medium,
+            arguments: widget.medium,
           );
         },
         leading: CircleAvatar(
           backgroundColor: Colors.transparent,
-          backgroundImage: medium.setBGImage(),
+          backgroundImage: widget.medium.setBGImage(),
           radius: 25,
         ),
         title: Text(
-          medium.initials,
+          widget.medium.initials,
           style: Theme.of(context).textTheme.headline6,
         ),
-        subtitle: Text(medium.longName),
+        subtitle: Text(widget.medium.longName),
+        trailing: IconButton(
+          onPressed: () {
+            setState(() {
+              widget.medium.toggleFavorite();
+            });
+          },
+          icon: widget.medium.isFavorite
+              ? Icon(
+                  Icons.favorite,
+                  color: Colors.redAccent,
+                )
+              : Icon(
+                  Icons.favorite_outline,
+                  color: Colors.redAccent,
+                ),
+        ),
       ),
     );
   }
