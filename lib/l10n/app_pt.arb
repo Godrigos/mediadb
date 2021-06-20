@@ -1,3 +1,13 @@
 {
-    "appTitle": "Meios de Cultura"
+    "appTitle": "Meios de Cultura",
+    "close": "Fechar",
+    "ingredients": "Ingredientes",
+    "preparation": "Preparo",
+    "ps": "Observação",
+    "reference": "Referência",
+    "complement": "Solução complementar para outro meio",
+    "liquid": "Meio líquido",
+    "semisolid": "Meio semi-sólido",
+    "solid": "Meio sólido",
+    "undefined": "Estado do meio indefinido"
 }

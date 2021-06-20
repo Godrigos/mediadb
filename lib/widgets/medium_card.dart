@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../utils/app_routes.dart';
-import '../models/medium.dart';
+import '/utils/app_routes.dart';
+import '/models/medium.dart';
 
 class MediumCard extends StatefulWidget {
   final Medium medium;

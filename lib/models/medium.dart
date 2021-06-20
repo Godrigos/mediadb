@@ -59,26 +59,6 @@ class Medium with ChangeNotifier {
     }
   }
 
-  String setMediumState() {
-    if (this.isComplement) {
-      return 'Solução complementar para outro meio';
-    } else {
-      switch (this.whatState) {
-        case FisicalState.liquid:
-          return 'Meio líquido';
-
-        case FisicalState.semisolid:
-          return 'Meio semi-sólido.';
-
-        case FisicalState.solid:
-          return 'Meio sólido';
-
-        default:
-          return 'Estado do meio indefinido';
-      }
-    }
-  }
-
   void toggleFavorite() {
     isFavorite = !isFavorite;
     notifyListeners();

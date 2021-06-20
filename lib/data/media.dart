@@ -1,4 +1,4 @@
-import '../models/medium.dart';
+import '/models/medium.dart';
 
 List<Medium> media = [
   Medium(
@@ -36,7 +36,7 @@ List<Medium> media = [
           'é adicionado sobre o ágar.',
       'Ajustar o pH conforme a necessidade.',
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
-      'Armazenar à temperatura ambiente',
+      'Armazenar à temperatura ambiente.',
     ],
     whatState: FisicalState.solid,
     ps: 'Para o Caldo Batata Dextrose (CBD), basta não adicionar o ágar.',
@@ -658,6 +658,7 @@ List<Medium> media = [
       'Armazenar à temperatura ambiente.',
     ],
     whatState: FisicalState.liquid,
+    isFavorite: true,
   ),
   Medium(
     initials: 'YMA',
@@ -683,17 +684,5 @@ List<Medium> media = [
       'Armazenar à temperatura ambiente.',
     ],
     whatState: FisicalState.solid,
-  ),
-  Medium(
-    initials: 'DUMMY',
-    longName: 'Entrada de teste',
-    ingredients: {
-      'dH₂O': Quantity(amount: 1, unit: 'L'),
-    },
-    steps: [
-      'Beba...',
-    ],
-    whatState: FisicalState.liquid,
-    isFavorite: true,
   ),
 ];

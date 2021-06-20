@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../widgets/ingredients_list.dart';
-import '../widgets/steps_list.dart';
-import '../models/medium.dart';
+import '/widgets/ingredients_list.dart';
+import '/widgets/steps_list.dart';
+import '/models/medium.dart';
 
 class MediumDetailScreen extends StatelessWidget {
   Widget _createSectionTitle(BuildContext context, String title) {
@@ -39,6 +40,26 @@ class MediumDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final medium = ModalRoute.of(context)!.settings.arguments as Medium;
 
+    String _setMediumState(medium) {
+      if (medium.isComplement) {
+        return AppLocalizations.of(context)!.complement;
+      } else {
+        switch (medium.whatState) {
+          case FisicalState.liquid:
+            return AppLocalizations.of(context)!.liquid;
+
+          case FisicalState.semisolid:
+            return AppLocalizations.of(context)!.semisolid;
+
+          case FisicalState.solid:
+            return AppLocalizations.of(context)!.solid;
+
+          default:
+            return AppLocalizations.of(context)!.undefined;
+        }
+      }
+    }
+
     return Scaffold(
       backgroundColor: Colors.blueGrey[50],
       appBar: AppBar(
@@ -49,14 +70,16 @@ class MediumDetailScreen extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                _createSectionTitle(context, 'Ingredientes'),
+                _createSectionTitle(
+                    context, AppLocalizations.of(context)!.ingredients),
                 _createSectionContainer(
                   context,
                   IngredientList(medium: medium),
                   MediaQuery.of(context).size.height * 0.25,
                   MediaQuery.of(context).size.width * 0.9,
                 ),
-                _createSectionTitle(context, 'Preparo'),
+                _createSectionTitle(
+                    context, AppLocalizations.of(context)!.preparation),
                 _createSectionContainer(
                   context,
                   StepsList(medium: medium),
@@ -72,7 +95,7 @@ class MediumDetailScreen extends StatelessWidget {
                       radius: 20,
                     ),
                     title: Text(
-                      medium.setMediumState(),
+                      _setMediumState(medium),
                       style: TextStyle(fontWeight: FontWeight.normal),
                     ),
                     trailing: Container(
@@ -86,14 +109,17 @@ class MediumDetailScreen extends StatelessWidget {
                                   context: context,
                                   builder: (BuildContext context) {
                                     return AlertDialog(
-                                      title: Text('Observação'),
+                                      title: Text(
+                                          AppLocalizations.of(context)!.ps),
                                       content: Text(medium.ps),
                                       actions: [
                                         TextButton(
                                           onPressed: () {
                                             Navigator.of(context).pop();
                                           },
-                                          child: Text('Fechar'),
+                                          child: Text(
+                                              AppLocalizations.of(context)!
+                                                  .close),
                                         ),
                                       ],
                                     );
@@ -117,14 +143,17 @@ class MediumDetailScreen extends StatelessWidget {
                                   context: context,
                                   builder: (BuildContext context) {
                                     return AlertDialog(
-                                      title: Text('Referência'),
+                                      title: Text(AppLocalizations.of(context)!
+                                          .reference),
                                       content: Text(medium.reference),
                                       actions: [
                                         TextButton(
                                           onPressed: () {
                                             Navigator.of(context).pop();
                                           },
-                                          child: Text('Fechar'),
+                                          child: Text(
+                                              AppLocalizations.of(context)!
+                                                  .close),
                                         ),
                                       ],
                                     );

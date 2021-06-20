@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/medium.dart';
+import '/models/medium.dart';
 
 class StepsList extends StatelessWidget {
   final Medium medium;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../models/media_list.dart';
-import '../models/medium.dart';
+import '/models/media_list.dart';
+import '/models/medium.dart';
 import 'medium_card.dart';
 
 class ListWidget extends StatelessWidget {

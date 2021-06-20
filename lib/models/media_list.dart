@@ -1,4 +1,4 @@
-import '../data/media.dart';
+import '/data/media.dart';
 import 'medium.dart';
 
 class MediaList {

@@ -2,5 +2,45 @@
     "appTitle": "Culture Media",
     "@appTitle": {
       "description": "The application main screen title."
+    },
+    "close": "Close",
+    "@close": {
+      "description": "Close screen or notification."
+    },
+    "ingredients": "Ingredients",
+    "@ingredients": {
+      "description": "Culture media ingredients list."
+    },
+    "preparation": "Preparation",
+    "@preparation": {
+      "description": "Culture media preparation steps list."
+    },
+    "ps": "P.S.",
+    "@ps": {
+      "description": "Post scriptum."
+    },
+    "reference": "Reference",
+    "@reference": {
+      "description": "Bibibliographic reference of the medium."
+    },
+    "complement": "Complementary solution to other medium",
+    "@complement": {
+      "description": "Solution utilization."
+    },
+    "liquid": "Liquid medium",
+    "@liquid": {
+      "description": "A medium physical state."
+    },
+    "semisolid": "Semisolid medium",
+    "@semisolid": {
+      "description": "A medium physical state."
+    },
+    "solid": "Solid medium",
+    "@solid": {
+      "description": "A medium physical state."
+    },
+    "undefined": "Undefined medium physical state.",
+    "@undefined": {
+      "description": "A medium physical state."
     }
 }

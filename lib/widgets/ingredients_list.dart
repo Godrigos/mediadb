@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/medium.dart';
+import '/models/medium.dart';
 
 class IngredientList extends StatelessWidget {
   final Medium medium;
