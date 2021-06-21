@@ -307,6 +307,33 @@ List<Medium> media = [
     mediumState: PhysicalState.solid,
   ),
   Medium(
+    initials: 'MHA',
+    longName: 'Mueller-Hinton Agar',
+    ingredients: {
+      'Extrato de Carne': Quantity(amount: 2, unit: 'g'),
+      'Amido Solúvel': Quantity(amount: 1.5, unit: 'g'),
+      'Caseína': Quantity(amount: 17.5, unit: 'g'),
+      'Ágar': Quantity(amount: 17, unit: 'g'),
+      'dH₂O': Quantity(amount: 1, unit: 'L'),
+      'pH': Quantity(amount: 7.0, unit: ''),
+    },
+    steps: [
+      'Adicionar os ingredientes em 800mL de água destilada.',
+      'Misturar bem até diluir todos os ingredientes.',
+      'Completar o volume para 1 litro.',
+      'Ajustar o pH conforme necessário.',
+      'O ágar deve ser pesado e colocado nos frascos sem meio, o qual ' +
+          'é adicionado sobre o ágar.',
+      'Esterilizar em autoclave por 20 minutos a 121 ℃.',
+      'Armazenar à temperatura ambiente.',
+    ],
+    mediumState: PhysicalState.solid,
+    reference: 'Mueller, J. H.; Hinton, J. (1 October 1941). A Protein-Free ' +
+    	'Medium for Primary Isolation of the Gonococcus and Meningococcus. ' +
+    	'Experimental Biology and Medicine. 48 (1): 330–333. ' +
+    	'doi:10.3181/00379727-48-13311.',
+  ),
+  Medium(
     initials: 'MM',
     longName: 'Meio Mínimo',
     ingredients: {
