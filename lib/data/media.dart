@@ -13,7 +13,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
   ),
   Medium(
     initials: 'BDA',
@@ -38,7 +38,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
     ps: 'Para o Caldo Batata Dextrose (CBD), basta não adicionar o ágar.',
   ),
   Medium(
@@ -62,7 +62,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
     reference: 'J.G. Figueiredo, E.H. Goulin, F. Tanaka, D. Stringari, ' +
         'V. Kava-Cordeiro, L.V. Galli-Terasawa, C.C. Staats, A. Schrank, ' +
         'C. Glienke. Agrobacterium tumefaciens-mediated transformation ' +
@@ -94,7 +94,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
   ),
   Medium(
     initials: 'DYGS',
@@ -121,7 +121,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
     reference: 'Rodrigues Neto J, Malavolta VA Jr, Victor O (1986). ' +
         'Meio simples para o isolamento e cultivo de Xanthomonas campestris ' +
         'pv. citri tipo B. Summa Phytopathol 12:32',
@@ -143,7 +143,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.liquid,
+    mediumState: PhysicalState.liquid,
     reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
   ),
   Medium(
@@ -167,7 +167,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
     reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
   ),
   Medium(
@@ -194,7 +194,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
     reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
   ),
   Medium(
@@ -222,7 +222,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
     reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
   ),
   Medium(
@@ -247,7 +247,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
     reference: 'Shirling and Gottlieb. 1966. Int. J. Syst. Bacteriol. 16:313.',
   ),
   Medium(
@@ -269,7 +269,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.liquid,
+    mediumState: PhysicalState.liquid,
     reference: 'Bertani G. Studies on lysogenesis. I. The mode of phage ' +
         'liberation by lysogenic Escherichia coli. J Bacteriol. 1951 Sep;' +
         '62(3):293-300. doi: 10.1128/jb.62.3.293-300.1951. PMID: 14888646; ' +
@@ -304,7 +304,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
   ),
   Medium(
     initials: 'MM',
@@ -330,7 +330,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
   ),
   Medium(
     initials: 'MEA',
@@ -352,7 +352,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
   ),
   Medium(
     initials: 'NA',
@@ -373,7 +373,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
   ),
   Medium(
     initials: 'NBY',
@@ -398,7 +398,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
   ),
   Medium(
     initials: 'NfB',
@@ -427,7 +427,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.semisolid,
+    mediumState: PhysicalState.semisolid,
     reference: 'Hartmann A., Baldani J.I. The genus Azospirillum. ' +
         'The Prokaryotes, V. 5: Proteobacteria Alpha and Beta Subclasses' +
         'Eds. M. Dworkin, S. Falkow, E. Rosenberg, K.H. Schleifer, E. ' +
@@ -455,7 +455,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Ajustar o pH de acordo com a necessidade.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
   ),
   Medium(
     initials: 'SDA',
@@ -476,7 +476,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
     reference: 'Emmons, C. W., et al., Medical Mycology, 2nd ed., ' +
         'Lea and Febiger, Philadelphia, 1970. ',
   ),
@@ -499,7 +499,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.liquid,
+    mediumState: PhysicalState.liquid,
     ps: 'Com o acréscimo de 15g/L de ágar, temos o meio em estado sólido.',
   ),
   Medium(
@@ -521,7 +521,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar a solução em frasco escuro a 4℃.',
     ],
-    whatState: FisicalState.liquid,
+    mediumState: PhysicalState.liquid,
     ps: 'Utilizada no meio NfB.',
     isComplement: true,
   ),
@@ -545,7 +545,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.liquid,
+    mediumState: PhysicalState.liquid,
     ps: 'Os 0,952g de MgCl₂ podem ser substituídos por 1,204g de MgSO₄.',
     reference: 'Hanahan, D. (1983). Studies on transformation of ' +
         'Escherichia coli with plasmids. Journal of Molecular Biology. ' +
@@ -571,7 +571,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.liquid,
+    mediumState: PhysicalState.liquid,
     ps: 'Os 0,952g de MgCl₂ podem ser substituídos por 1,204g de MgSO₄.',
     reference: 'Hanahan, D. (1983). Studies on transformation of ' +
         'Escherichia coli with plasmids. Journal of Molecular Biology. ' +
@@ -593,7 +593,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.liquid,
+    mediumState: PhysicalState.liquid,
     ps: 'Utilizada nos meios ISP 3, 4 e 5.',
     isComplement: true,
   ),
@@ -617,7 +617,7 @@ List<Medium> media = [
           'uma vez ao dia, durante três dias consecutivos. Armazena-se ' +
           'então a solução em frasco escuro a 4℃ sob clorofórmio (5µL).',
     ],
-    whatState: FisicalState.liquid,
+    mediumState: PhysicalState.liquid,
     ps: 'Utilizada no Meio Completo.',
     isComplement: true,
   ),
@@ -637,7 +637,7 @@ List<Medium> media = [
           'uma vez ao dia, durante três dias consecutivos. Armazena-se ' +
           'então a solução em frasco escuro a 4℃ sob clorofórmio (5µL).',
     ],
-    whatState: FisicalState.liquid,
+    mediumState: PhysicalState.liquid,
     ps: 'Utilizada no meio NfB.',
     isComplement: true,
   ),
@@ -657,7 +657,7 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.liquid,
+    mediumState: PhysicalState.liquid,
     isFavorite: true,
   ),
   Medium(
@@ -683,6 +683,6 @@ List<Medium> media = [
       'Esterilizar em autoclave por 20 minutos a 121 ℃.',
       'Armazenar à temperatura ambiente.',
     ],
-    whatState: FisicalState.solid,
+    mediumState: PhysicalState.solid,
   ),
 ];

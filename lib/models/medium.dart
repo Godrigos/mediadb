@@ -7,7 +7,7 @@ class Medium with ChangeNotifier {
   final Map<String, Quantity> ingredients;
   final List<String> steps;
   final String reference;
-  final FisicalState whatState;
+  final PhysicalState mediumState;
   final bool isComplement;
   final String ps;
   bool isFavorite;
@@ -17,7 +17,7 @@ class Medium with ChangeNotifier {
     required this.longName,
     required this.ingredients,
     required this.steps,
-    required this.whatState,
+    required this.mediumState,
     this.reference = '',
     this.isComplement = false,
     this.ps = '',
@@ -31,20 +31,20 @@ class Medium with ChangeNotifier {
         scale: 1,
       );
     } else {
-      switch (this.whatState) {
-        case FisicalState.liquid:
+      switch (this.mediumState) {
+        case PhysicalState.liquid:
           return ExactAssetImage(
             'assets/icons/erlenmeyer.png',
             scale: 1,
           );
 
-        case FisicalState.semisolid:
+        case PhysicalState.semisolid:
           return ExactAssetImage(
             'assets/icons/petridish_semisolid.png',
             scale: 1,
           );
 
-        case FisicalState.solid:
+        case PhysicalState.solid:
           return ExactAssetImage(
             'assets/icons/petridish_solid.png',
             scale: 1,
@@ -65,7 +65,7 @@ class Medium with ChangeNotifier {
   }
 }
 
-enum FisicalState {
+enum PhysicalState {
   solid,
   semisolid,
   liquid,

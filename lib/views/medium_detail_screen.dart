@@ -45,13 +45,13 @@ class MediumDetailScreen extends StatelessWidget {
         return AppLocalizations.of(context)!.complement;
       } else {
         switch (medium.whatState) {
-          case FisicalState.liquid:
+          case PhysicalState.liquid:
             return AppLocalizations.of(context)!.liquid;
 
-          case FisicalState.semisolid:
+          case PhysicalState.semisolid:
             return AppLocalizations.of(context)!.semisolid;
 
-          case FisicalState.solid:
+          case PhysicalState.solid:
             return AppLocalizations.of(context)!.solid;
 
           default:
