@@ -44,7 +44,7 @@ class MediumDetailScreen extends StatelessWidget {
       if (medium.isComplement) {
         return AppLocalizations.of(context)!.complement;
       } else {
-        switch (medium.whatState) {
+        switch (medium.mediumState) {
           case PhysicalState.liquid:
             return AppLocalizations.of(context)!.liquid;
 
