@@ -329,9 +329,9 @@ List<Medium> media = [
     ],
     mediumState: PhysicalState.solid,
     reference: 'Mueller, J. H.; Hinton, J. (1 October 1941). A Protein-Free ' +
-    	'Medium for Primary Isolation of the Gonococcus and Meningococcus. ' +
-    	'Experimental Biology and Medicine. 48 (1): 330–333. ' +
-    	'doi:10.3181/00379727-48-13311.',
+        'Medium for Primary Isolation of the Gonococcus and Meningococcus. ' +
+        'Experimental Biology and Medicine. 48 (1): 330–333. ' +
+        'doi:10.3181/00379727-48-13311.',
   ),
   Medium(
     initials: 'MM',

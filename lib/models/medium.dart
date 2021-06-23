@@ -69,6 +69,7 @@ enum PhysicalState {
   solid,
   semisolid,
   liquid,
+  undefined,
 }
 
 class Quantity {
