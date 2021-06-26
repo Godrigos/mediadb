@@ -669,6 +669,25 @@ List<Medium> media = [
     isComplement: true,
   ),
   Medium(
+    initials: 'TY',
+    longName: 'Triptone Yeast Extract',
+    ingredients: {
+      'Triptona': Quantity(amount: 5, unit: 'g'),
+      'Extrato de Levedura': Quantity(amount: 3, unit: 'g'),
+      'MgSO₄': Quantity(amount: 2, unit: 'g'),
+      'dH₂O': Quantity(amount: 1, unit: 'L'),
+    },
+    steps: [
+      'Adicionar os ingredientes em 800mL de água destilada.',
+      'Misturar bem até diluir todos os ingredientes.',
+      'Completar o volume para 1 litro.',
+      'Ajustar o pH conforme necessário.',
+      'Esterilizar em autoclave por 20 minutos a 121 ℃.',
+      'Armazenar à temperatura ambiente.',
+    ],
+    mediumState: PhysicalState.liquid,
+  ),
+  Medium(
     initials: 'YES',
     longName: 'Yeast Extract Sucrose',
     ingredients: {
