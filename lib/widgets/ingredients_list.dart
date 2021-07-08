@@ -13,7 +13,7 @@ class IngredientList extends StatelessWidget {
       itemCount: medium.ingredients.length,
       itemBuilder: (ctx, index) {
         return Card(
-          color: Colors.blue[50],
+          color: Colors.green[50],
           child: Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 1,

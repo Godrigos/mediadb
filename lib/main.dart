@@ -5,7 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'package:mediadb/data/media.dart';
+import 'data/media.dart';
 import 'models/medium.dart';
 import 'views/media_list_screen.dart';
 import 'utils/app_routes.dart';
@@ -38,8 +38,9 @@ class MyApp extends StatelessWidget {
         const Locale('pt', 'BR'), // Brazilian Portuguese
       ],
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        accentColor: Colors.redAccent,
+        primarySwatch: Colors.green,
+        primaryColor: Colors.green[600],
+        accentColor: Colors.greenAccent,
         fontFamily: 'RobotoCondensed',
         textTheme: ThemeData.light().textTheme.copyWith(
               headline6: TextStyle(

@@ -29,7 +29,7 @@ class MediumDetailScreen extends StatelessWidget {
       margin: const EdgeInsets.all(5),
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: Colors.black),
         borderRadius: BorderRadius.circular(10),
       ),
       child: child,
@@ -129,7 +129,7 @@ class MediumDetailScreen extends StatelessWidget {
                             icon: medium.ps != ''
                                 ? Icon(
                                     Icons.info,
-                                    color: Colors.blue,
+                                    color: Colors.green[600],
                                   )
                                 : Icon(
                                     Icons.info_outline,
@@ -163,7 +163,7 @@ class MediumDetailScreen extends StatelessWidget {
                             icon: medium.reference != ''
                                 ? Icon(
                                     Icons.note,
-                                    color: Colors.blue,
+                                    color: Colors.green[600],
                                   )
                                 : Icon(
                                     Icons.note_outlined,
