@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mediadb">
+    package="com.github.Godrigos.mediadb">
    <application
-        android:label="mediadb"
+        android:label="Culture Media DB"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

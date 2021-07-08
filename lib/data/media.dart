@@ -704,7 +704,6 @@ List<Medium> media = [
       'Armazenar à temperatura ambiente.',
     ],
     mediumState: PhysicalState.liquid,
-    isFavorite: true,
   ),
   Medium(
     initials: 'YMA',

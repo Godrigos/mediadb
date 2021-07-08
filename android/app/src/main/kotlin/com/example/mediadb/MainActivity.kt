@@ -1,4 +1,4 @@
-package com.example.mediadb
+package com.github.Godrigos.mediadb
 
 import io.flutter.embedding.android.FlutterActivity
 

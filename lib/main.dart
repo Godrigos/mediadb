@@ -2,12 +2,24 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
+import 'package:mediadb/data/media.dart';
+import 'models/medium.dart';
 import 'views/media_list_screen.dart';
 import 'utils/app_routes.dart';
 import 'views/medium_detail_screen.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(MediumAdapter());
+  Hive.registerAdapter(QuantityAdapter());
+  Hive.registerAdapter(PhysicalStateAdapter());
+
+  var box = await Hive.openBox<Medium>('media');
+  if (box.isEmpty) box.addAll(media);
+
   runApp(MyApp());
 }
 
@@ -72,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(AppLocalizations.of(context)!.appTitle),
       ),
       body: SafeArea(
-        child: MediaScreen(),
+        child: MediaListScreen(),
       ),
     );
   }

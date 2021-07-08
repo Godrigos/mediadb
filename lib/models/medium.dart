@@ -1,15 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hive/hive.dart';
 
-class Medium with ChangeNotifier {
+part 'medium.g.dart';
+
+@HiveType(typeId: 0)
+class Medium extends HiveObject with ChangeNotifier {
+  @HiveField(0)
   final String initials;
+  @HiveField(1)
   final String longName;
+  @HiveField(2)
   final Map<String, Quantity> ingredients;
+  @HiveField(3)
   final List<String> steps;
+  @HiveField(4)
   final String reference;
+  @HiveField(5)
   final PhysicalState mediumState;
+  @HiveField(6)
   final bool isComplement;
+  @HiveField(7)
   final String ps;
+  @HiveField(8)
   bool isFavorite;
 
   Medium({
@@ -59,21 +72,19 @@ class Medium with ChangeNotifier {
     }
   }
 
-  void toggleFavorite() {
-    isFavorite = !isFavorite;
+  void toggleFavorite(mdKey) {
+    var i = Hive.box<Medium>('media').get(mdKey);
+    i!.isFavorite = !isFavorite;
+    i.save();
     notifyListeners();
   }
 }
 
-enum PhysicalState {
-  solid,
-  semisolid,
-  liquid,
-  undefined,
-}
-
+@HiveType(typeId: 1)
 class Quantity {
+  @HiveField(0)
   final double amount;
+  @HiveField(1)
   final String unit;
 
   const Quantity({
@@ -82,4 +93,16 @@ class Quantity {
   });
 
   String toString() => '$amount $unit';
+}
+
+@HiveType(typeId: 2)
+enum PhysicalState {
+  @HiveField(0)
+  solid,
+  @HiveField(1)
+  semisolid,
+  @HiveField(2)
+  liquid,
+  @HiveField(3)
+  undefined,
 }

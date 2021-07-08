@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
-import '/models/media_list.dart';
 import '/models/medium.dart';
 import 'medium_card.dart';
 
-class ListWidget extends StatelessWidget {
-  final List<Medium> _mediaList = MediaList().sortList();
+class ListWidget extends StatefulWidget {
+  @override
+  _ListWidgetState createState() => _ListWidgetState();
+}
+
+class _ListWidgetState extends State<ListWidget> {
+  var box = Hive.box<Medium>('media');
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: _mediaList.length,
+      itemCount: box.values.toList().length,
       itemBuilder: (ctx, index) {
-        Medium md = _mediaList[index];
+        Medium md = box.values.toList()[index];
         return MediumCard(
-          medium: md,
+          mdKey: md.key,
         );
       },
     );
