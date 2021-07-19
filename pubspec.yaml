@@ -26,7 +26,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
-  provider: ^5.0.0
   hive: ^2.0.4
   hive_flutter: ^1.1.0
 
