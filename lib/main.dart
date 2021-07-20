@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive/hive.dart';
@@ -12,6 +13,10 @@ import 'utils/app_routes.dart';
 import 'views/medium_detail_screen.dart';
 
 void main() async {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+
   await Hive.initFlutter();
   Hive.registerAdapter(MediumAdapter());
   Hive.registerAdapter(QuantityAdapter());
