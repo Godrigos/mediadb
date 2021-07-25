@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -6,24 +7,22 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'data/media.dart';
-import 'models/medium.dart';
+import 'models/favorite.dart';
 import 'views/media_list_screen.dart';
 import 'utils/app_routes.dart';
 import 'views/medium_detail_screen.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
 
+  await Firebase.initializeApp();
   await Hive.initFlutter();
-  Hive.registerAdapter(MediumAdapter());
-  Hive.registerAdapter(QuantityAdapter());
-  Hive.registerAdapter(PhysicalStateAdapter());
-
-  var box = await Hive.openBox<Medium>('media');
-  if (box.isEmpty) box.addAll(media);
+  Hive.registerAdapter(FavoriteAdapter());
+  await Hive.openBox<Favorite>('favorites');
 
   runApp(MyApp());
 }

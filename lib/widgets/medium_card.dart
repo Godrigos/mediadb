@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:mediadb/models/medium.dart';
 
+import '/models/favorite.dart';
 import '/utils/app_routes.dart';
-import '/models/medium.dart';
 
 class MediumCard extends StatefulWidget {
-  final int mdKey;
+  final Medium medium;
 
-  const MediumCard({required this.mdKey});
+  const MediumCard({required this.medium});
 
   @override
   _MediumCardState createState() => _MediumCardState();
 }
 
 class _MediumCardState extends State<MediumCard> {
-  var box = Hive.box<Medium>('media');
+  var box = Hive.box<Favorite>('favorites');
 
   @override
   Widget build(BuildContext context) {
@@ -28,26 +29,28 @@ class _MediumCardState extends State<MediumCard> {
         onTap: () {
           Navigator.of(context).pushNamed(
             AppRoutes.MEDIUM_DETAIL,
-            arguments: box.get(widget.mdKey),
+            arguments: widget.medium,
           );
         },
         leading: CircleAvatar(
           backgroundColor: Colors.transparent,
-          backgroundImage: box.get(widget.mdKey)?.setBGImage(),
+          backgroundImage: widget.medium.setBGImage(),
           radius: 25,
         ),
         title: Text(
-          box.get(widget.mdKey)!.initials,
+          widget.medium.initials,
           style: Theme.of(context).textTheme.headline6,
         ),
-        subtitle: Text(box.get(widget.mdKey)!.longName),
+        subtitle: Text(widget.medium.longName),
         trailing: IconButton(
           onPressed: () {
             setState(() {
-              box.get(widget.mdKey)?.toggleFavorite(widget.mdKey);
+              box
+                  .get(widget.medium.initials)
+                  ?.toggleFavorite(widget.medium.initials);
             });
           },
-          icon: box.get(widget.mdKey)!.isFavorite
+          icon: box.get(widget.medium.initials)!.isFavorite
               ? Icon(
                   Icons.favorite,
                   color: Colors.redAccent,
