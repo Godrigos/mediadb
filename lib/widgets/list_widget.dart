@@ -30,23 +30,13 @@ class _ListWidgetState extends State<ListWidget> {
         var docs = media.data!.docs;
         var box = Hive.box<Favorite>('favorites');
 
-        Map<String, Quantity> myIngredients = {};
-
         return ListView.builder(
           itemCount: media.data!.docs.length,
           itemBuilder: (ctx, i) {
-            // Convert data from firebase into <String, Quantity>
-            Map.from(docs[i].get('ingredients')).entries.forEach((e) {
-              myIngredients[e.key] = Quantity(
-                amount: e.value['amount'].toDouble(),
-                unit: e.value['unit'],
-              );
-            });
-
             Medium md = Medium(
               initials: docs[i].get('initials'),
               longName: docs[i].get('longName'),
-              ingredients: myIngredients,
+              ingredients: Medium.getIngredients(docs, i),
               steps: docs[i].get('steps').cast<String>(),
               mediumState: PhysicalState.values.elementAt(
                 docs[i].get('mediumState'),

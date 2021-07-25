@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -55,6 +56,19 @@ class Medium {
           );
       }
     }
+  }
+
+  static Map<String, Quantity> getIngredients(
+      List<QueryDocumentSnapshot<Map<String, dynamic>>> docs, int i) {
+    Map<String, Quantity> ingredients = {};
+
+    Map.from(docs[i].get('ingredients')).entries.forEach((e) {
+      ingredients[e.key] = Quantity(
+        amount: e.value['amount'].toDouble(),
+        unit: e.value['unit'],
+      );
+    });
+    return ingredients;
   }
 }
 
