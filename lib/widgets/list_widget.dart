@@ -34,12 +34,12 @@ class _ListWidgetState extends State<ListWidget> {
           itemCount: media.data!.docs.length,
           itemBuilder: (ctx, i) {
             Medium md = Medium(
-              initials: docs[i].get('initials'),
-              longName: docs[i].get('longName'),
+              initials: docs[i].get('initials') ?? '',
+              longName: docs[i].get('longName') ?? '',
               ingredients: Medium.getIngredients(docs, i),
-              steps: docs[i].get('steps').cast<String>(),
+              steps: docs[i].get('steps').cast<String>() ?? <String>[],
               mediumState: PhysicalState.values.elementAt(
-                docs[i].get('mediumState'),
+                docs[i].get('mediumState') ?? PhysicalState.undefined,
               ),
               reference: docs[i].data().containsKey('reference')
                   ? docs[i].get('reference')
@@ -48,6 +48,7 @@ class _ListWidgetState extends State<ListWidget> {
                   ? docs[i].get('isComplement')
                   : false,
               ps: docs[i].data().containsKey('ps') ? docs[i].get('ps') : '',
+              use: docs[i].data().containsKey('use') ? docs[i].get('use') : '',
             );
 
             if (box.get(docs[i].get('initials')) == null) {

@@ -162,11 +162,11 @@ class MediumDetailScreen extends StatelessWidget {
                             },
                             icon: medium.reference != ''
                                 ? Icon(
-                                    Icons.note,
+                                    Icons.article,
                                     color: Colors.green[600],
                                   )
                                 : Icon(
-                                    Icons.note_outlined,
+                                    Icons.article_outlined,
                                     color: Colors.grey,
                                   ),
                           ),

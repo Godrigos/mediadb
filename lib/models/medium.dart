@@ -11,6 +11,7 @@ class Medium {
   String reference;
   bool isComplement;
   String ps;
+  String use;
 
   Medium({
     required this.initials,
@@ -21,6 +22,7 @@ class Medium {
     this.reference = '',
     this.isComplement = false,
     this.ps = '',
+    this.use = '',
   });
 
   ExactAssetImage setBGImage() {
