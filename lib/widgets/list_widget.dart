@@ -49,6 +49,7 @@ class _ListWidgetState extends State<ListWidget> {
                   : false,
               ps: docs[i].data().containsKey('ps') ? docs[i].get('ps') : '',
               use: docs[i].data().containsKey('use') ? docs[i].get('use') : '',
+              pH: docs[i].data().containsKey('pH') ? docs[i].get('pH') : '',
             );
 
             if (box.get(docs[i].get('initials')) == null) {

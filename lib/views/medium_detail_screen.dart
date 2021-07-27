@@ -78,12 +78,16 @@ class MediumDetailScreen extends StatelessWidget {
                   MediaQuery.of(context).size.height * 0.25,
                   MediaQuery.of(context).size.width * 0.9,
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 5),
+                  child: Text('pH: ${medium.pH}'),
+                ),
                 _createSectionTitle(
                     context, AppLocalizations.of(context)!.preparation),
                 _createSectionContainer(
                   context,
                   StepsList(medium: medium),
-                  MediaQuery.of(context).size.height * 0.43,
+                  MediaQuery.of(context).size.height * 0.40,
                   MediaQuery.of(context).size.width * 0.9,
                 ),
                 Container(
@@ -92,7 +96,7 @@ class MediumDetailScreen extends StatelessWidget {
                     leading: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       backgroundImage: medium.setBGImage(),
-                      radius: 20,
+                      radius: 16,
                     ),
                     title: Text(
                       _setMediumState(medium),

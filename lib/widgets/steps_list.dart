@@ -15,7 +15,9 @@ class StepsList extends StatelessWidget {
         return Column(
           children: [
             ListTile(
+              dense: true,
               leading: CircleAvatar(
+                radius: 15,
                 child: Text('${index + 1}'),
               ),
               title: Text(

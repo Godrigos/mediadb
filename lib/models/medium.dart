@@ -12,6 +12,7 @@ class Medium {
   bool isComplement;
   String ps;
   String use;
+  String pH;
 
   Medium({
     required this.initials,
@@ -23,6 +24,7 @@ class Medium {
     this.isComplement = false,
     this.ps = '',
     this.use = '',
+    this.pH = '',
   });
 
   ExactAssetImage setBGImage() {
