@@ -87,7 +87,7 @@ class Quantity {
   String toString() => '$amount $unit';
   Quantity multiply(double multiplier) {
     return Quantity(
-      amount: this.amount * multiplier,
+      amount: this.amount * multiplier.abs(),
       unit: unit,
     );
   }
