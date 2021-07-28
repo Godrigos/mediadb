@@ -85,6 +85,12 @@ class Quantity {
     required this.unit,
   });
   String toString() => '$amount $unit';
+  Quantity multiply(double multiplier) {
+    return Quantity(
+      amount: this.amount * multiplier,
+      unit: unit,
+    );
+  }
 }
 
 enum PhysicalState {
