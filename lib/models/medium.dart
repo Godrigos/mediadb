@@ -11,6 +11,7 @@ class Medium {
   List<String> organism;
   String reference;
   bool isComplement;
+  String complement;
   String ps;
   String use;
   String pH;
@@ -24,6 +25,7 @@ class Medium {
     this.organism = const [],
     this.reference = '',
     this.isComplement = false,
+    this.complement = '',
     this.ps = '',
     this.use = '',
     this.pH = '',
@@ -65,11 +67,11 @@ class Medium {
   }
 
   static Map<String, Quantity> getIngredients(
-      List<QueryDocumentSnapshot<Map<String, dynamic>>> docs, int i) {
+      QueryDocumentSnapshot<Map<String, dynamic>> doc) {
     Map<String, Quantity> ingredients = {};
 
-    if (docs[i].data().containsKey('ingredients'))
-      Map.from(docs[i].get('ingredients')).entries.forEach((e) {
+    if (doc.data().containsKey('ingredients'))
+      Map.from(doc.get('ingredients')).entries.forEach((e) {
         ingredients[e.key] = Quantity(
           amount: e.value['amount'].toDouble(),
           unit: e.value['unit'],

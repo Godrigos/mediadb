@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:mediadb/utils/mediumFromFirestore.dart';
 
 import '/widgets/ingredients_list.dart';
 import '/widgets/steps_list.dart';
@@ -179,6 +180,8 @@ class MediumDetailScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                if (medium.complement != '')
+                  mediumFromFirebase(medium.complement),
               ],
             ),
           ),

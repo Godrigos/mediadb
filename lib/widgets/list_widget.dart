@@ -40,7 +40,7 @@ class _ListWidgetState extends State<ListWidget> {
               longName: docs[i].data().containsKey('longName')
                   ? docs[i].get('longName')
                   : '',
-              ingredients: Medium.getIngredients(docs, i),
+              ingredients: Medium.getIngredients(docs[i]),
               steps: docs[i].data().containsKey('steps')
                   ? docs[i].get('steps').cast<String>()
                   : <String>[],
@@ -56,6 +56,9 @@ class _ListWidgetState extends State<ListWidget> {
               isComplement: docs[i].data().containsKey('isComplement')
                   ? docs[i].get('isComplement')
                   : false,
+              complement: docs[i].data().containsKey('complement')
+                  ? docs[i].get('complement')
+                  : '',
               ps: docs[i].data().containsKey('ps') ? docs[i].get('ps') : '',
               use: docs[i].data().containsKey('use') ? docs[i].get('use') : '',
               pH: docs[i].data().containsKey('pH') ? docs[i].get('pH') : '',
