@@ -8,6 +8,7 @@ class Medium {
   final Map<String, Quantity> ingredients;
   final List<String> steps;
   final PhysicalState mediumState;
+  List<String> organism;
   String reference;
   bool isComplement;
   String ps;
@@ -20,6 +21,7 @@ class Medium {
     required this.ingredients,
     required this.steps,
     required this.mediumState,
+    this.organism = const [],
     this.reference = '',
     this.isComplement = false,
     this.ps = '',
@@ -66,12 +68,13 @@ class Medium {
       List<QueryDocumentSnapshot<Map<String, dynamic>>> docs, int i) {
     Map<String, Quantity> ingredients = {};
 
-    Map.from(docs[i].get('ingredients')).entries.forEach((e) {
-      ingredients[e.key] = Quantity(
-        amount: e.value['amount'].toDouble(),
-        unit: e.value['unit'],
-      );
-    });
+    if (docs[i].data().containsKey('ingredients'))
+      Map.from(docs[i].get('ingredients')).entries.forEach((e) {
+        ingredients[e.key] = Quantity(
+          amount: e.value['amount'].toDouble(),
+          unit: e.value['unit'],
+        );
+      });
     return ingredients;
   }
 }

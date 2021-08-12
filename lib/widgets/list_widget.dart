@@ -34,13 +34,22 @@ class _ListWidgetState extends State<ListWidget> {
           itemCount: media.data!.docs.length,
           itemBuilder: (ctx, i) {
             Medium md = Medium(
-              initials: docs[i].get('initials') ?? '',
-              longName: docs[i].get('longName') ?? '',
+              initials: docs[i].data().containsKey('initials')
+                  ? docs[i].get('initials')
+                  : '',
+              longName: docs[i].data().containsKey('longName')
+                  ? docs[i].get('longName')
+                  : '',
               ingredients: Medium.getIngredients(docs, i),
-              steps: docs[i].get('steps').cast<String>() ?? <String>[],
-              mediumState: PhysicalState.values.elementAt(
-                docs[i].get('mediumState') ?? PhysicalState.undefined,
-              ),
+              steps: docs[i].data().containsKey('steps')
+                  ? docs[i].get('steps').cast<String>()
+                  : <String>[],
+              mediumState: docs[i].data().containsKey('mediumState')
+                  ? PhysicalState.values.elementAt(docs[i].get('mediumState'))
+                  : PhysicalState.undefined,
+              organism: docs[i].data().containsKey('organism')
+                  ? docs[i].get('organism').cast<String>()
+                  : <String>[],
               reference: docs[i].data().containsKey('reference')
                   ? docs[i].get('reference')
                   : '',
