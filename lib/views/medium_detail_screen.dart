@@ -180,8 +180,28 @@ class MediumDetailScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (medium.complement != '')
-                  mediumFromFirebase(medium.complement),
+                if (medium.complement.isNotEmpty)
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 5),
+                    child: Text(
+                      AppLocalizations.of(context)!.complementList,
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                  ),
+                if (medium.complement.isNotEmpty)
+                  SingleChildScrollView(
+                    child: Center(
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            child: mediumFromFirestore(medium.complement),
+                            height: MediaQuery.of(context).size.height * 0.15,
+                            width: MediaQuery.of(context).size.width * 0.9,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
               ],
             ),
           ),

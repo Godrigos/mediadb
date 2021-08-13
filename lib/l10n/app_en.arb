@@ -15,6 +15,10 @@
     "@preparation": {
       "description": "Culture media preparation steps list."
     },
+    "complementList": "Complements",
+    "@complementList": {
+      "description": "Complementary solutions list."
+    },
     "ps": "P.S.",
     "@ps": {
       "description": "Post scriptum."
@@ -23,7 +27,7 @@
     "@reference": {
       "description": "Bibibliographic reference of the medium."
     },
-    "complement": "Complementary solution to other medium",
+    "complement": "Complementary solution to a medium",
     "@complement": {
       "description": "Solution utilization."
     },

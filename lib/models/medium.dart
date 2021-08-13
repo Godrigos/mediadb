@@ -8,10 +8,10 @@ class Medium {
   final Map<String, Quantity> ingredients;
   final List<String> steps;
   final PhysicalState mediumState;
-  List<String> organism;
+  String organism;
   String reference;
   bool isComplement;
-  String complement;
+  List<String> complement;
   String ps;
   String use;
   String pH;
@@ -22,10 +22,10 @@ class Medium {
     required this.ingredients,
     required this.steps,
     required this.mediumState,
-    this.organism = const [],
+    this.organism = '',
     this.reference = '',
     this.isComplement = false,
-    this.complement = '',
+    this.complement = const <String>[],
     this.ps = '',
     this.use = '',
     this.pH = '',
