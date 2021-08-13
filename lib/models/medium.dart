@@ -8,7 +8,7 @@ class Medium {
   final Map<String, Quantity> ingredients;
   final List<String> steps;
   final PhysicalState mediumState;
-  String organism;
+  List<String> organism;
   String reference;
   bool isComplement;
   List<String> complement;
@@ -22,7 +22,7 @@ class Medium {
     required this.ingredients,
     required this.steps,
     required this.mediumState,
-    this.organism = '',
+    this.organism = const <String>[],
     this.reference = '',
     this.isComplement = false,
     this.complement = const <String>[],

@@ -48,8 +48,8 @@ mediumFromFirestore([List<String> name = const []]) {
                 ? PhysicalState.values.elementAt(docs[i].get('mediumState'))
                 : PhysicalState.undefined,
             organism: docs[i].data().containsKey('organism')
-                ? docs[i].get('organism')
-                : '',
+                ? docs[i].get('organism').cast<String>()
+                : <String>[],
             reference: docs[i].data().containsKey('reference')
                 ? docs[i].get('reference')
                 : '',
