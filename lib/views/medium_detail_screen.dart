@@ -41,26 +41,6 @@ class MediumDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final medium = ModalRoute.of(context)!.settings.arguments as Medium;
 
-    String _setMediumState(medium) {
-      if (medium.isComplement) {
-        return AppLocalizations.of(context)!.complement;
-      } else {
-        switch (medium.mediumState) {
-          case PhysicalState.liquid:
-            return AppLocalizations.of(context)!.liquid;
-
-          case PhysicalState.semisolid:
-            return AppLocalizations.of(context)!.semisolid;
-
-          case PhysicalState.solid:
-            return AppLocalizations.of(context)!.solid;
-
-          default:
-            return AppLocalizations.of(context)!.undefined;
-        }
-      }
-    }
-
     return Scaffold(
       backgroundColor: Colors.blueGrey[50],
       appBar: AppBar(
@@ -97,11 +77,7 @@ class MediumDetailScreen extends StatelessWidget {
                     leading: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       backgroundImage: medium.setBGImage(),
-                      radius: 16,
-                    ),
-                    title: Text(
-                      _setMediumState(medium),
-                      style: TextStyle(fontWeight: FontWeight.normal),
+                      radius: 14,
                     ),
                     trailing: Container(
                       width: MediaQuery.of(context).size.width * 0.25,

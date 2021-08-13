@@ -27,24 +27,32 @@
     "@reference": {
       "description": "Bibibliographic reference of the medium."
     },
-    "complement": "Complementary solution to a medium",
+    "complement": "Complementary solution to a medium.",
     "@complement": {
       "description": "Solution utilization."
     },
-    "liquid": "Liquid medium",
+    "liquid": "Liquid medium.",
     "@liquid": {
       "description": "A medium physical state."
     },
-    "semisolid": "Semisolid medium",
+    "semisolid": "Semisolid medium.",
     "@semisolid": {
       "description": "A medium physical state."
     },
-    "solid": "Solid medium",
+    "solid": "Solid medium.",
     "@solid": {
       "description": "A medium physical state."
     },
     "undefined": "Undefined medium physical state.",
     "@undefined": {
       "description": "A medium physical state."
+    },
+    "help": "Help",
+    "@help": {
+      "description": "Help screen title."
+    },
+    "helpIcons": "Media Icons",
+    "@helpIcons": {
+      "description": "Title for media icons on help page."
     }
 }

@@ -6,9 +6,11 @@
     "complementList": "Complementos",
     "ps": "Observação",
     "reference": "Referência",
-    "complement": "Solução complementar para meio",
-    "liquid": "Meio líquido",
-    "semisolid": "Meio semi-sólido",
-    "solid": "Meio sólido",
-    "undefined": "Estado do meio indefinido"
+    "complement": "Solução complementar para meio.",
+    "liquid": "Meio líquido.",
+    "semisolid": "Meio semi-sólido.",
+    "solid": "Meio sólido.",
+    "undefined": "Estado do meio indefinido",
+    "help": "Ajuda",
+    "helpIcons": "Ícones dos Meios"
 }

@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:mediadb/views/help_screen.dart';
 
 import 'models/favorite.dart';
 import 'views/media_list_screen.dart';
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       routes: {
         AppRoutes.MEDIUM_DETAIL: (ctx) => MediumDetailScreen(),
+        AppRoutes.HELP: (ctx) => HelpScreen(),
       },
     );
   }
@@ -87,6 +89,14 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.blueGrey[50],
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.appTitle),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.HELP);
+            },
+            icon: const Icon(Icons.help),
+          )
+        ],
       ),
       body: SafeArea(
         child: MediaListScreen(),
