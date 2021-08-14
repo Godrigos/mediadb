@@ -21,49 +21,86 @@ class HelpScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  backgroundImage: ExactAssetImage(
-                    'assets/icons/becker.png',
-                    scale: 1,
-                  ),
-                  radius: 18,
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/icons/becker.png',
+                      height: 35,
+                      width: 35,
+                    ),
+                    Text(
+                      ' ' + AppLocalizations.of(context)!.complement,
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
                 ),
-                title: Text(AppLocalizations.of(context)!.complement),
               ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  backgroundImage: ExactAssetImage(
-                    'assets/icons/erlenmeyer.png',
-                    scale: 1,
-                  ),
-                  radius: 18,
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 10,
+                  top: 5,
                 ),
-                title: Text(AppLocalizations.of(context)!.liquid),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/icons/erlenmeyer.png',
+                      height: 35,
+                      width: 35,
+                    ),
+                    Text(
+                      ' ' + AppLocalizations.of(context)!.liquid,
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  backgroundImage: ExactAssetImage(
-                    'assets/icons/petridish_semisolid.png',
-                    scale: 1,
-                  ),
-                  radius: 18,
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 10,
+                  top: 5,
                 ),
-                title: Text(AppLocalizations.of(context)!.semisolid),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/icons/petridish_semisolid.png',
+                      height: 35,
+                      width: 35,
+                    ),
+                    Text(
+                      ' ' + AppLocalizations.of(context)!.semisolid,
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  backgroundImage: ExactAssetImage(
-                    'assets/icons/petridish_solid.png',
-                    scale: 1,
-                  ),
-                  radius: 18,
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 10,
+                  top: 5,
                 ),
-                title: Text(AppLocalizations.of(context)!.solid),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/icons/petridish_solid.png',
+                      height: 35,
+                      width: 35,
+                    ),
+                    Text(
+                      ' ' + AppLocalizations.of(context)!.solid,
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
