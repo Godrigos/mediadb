@@ -102,6 +102,27 @@ class HelpScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 10,
+                  top: 5,
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/icons/petridish.png',
+                      height: 35,
+                      width: 35,
+                    ),
+                    Text(
+                      ' ' + AppLocalizations.of(context)!.undefined,
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
