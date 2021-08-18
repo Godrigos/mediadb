@@ -1,10 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:mediadb/utils/mediumFromFirestore.dart';
 
+import '/models/medium.dart';
+import '../widgets/list_Media.dart';
 import '/widgets/ingredients_list.dart';
 import '/widgets/steps_list.dart';
-import '/models/medium.dart';
 
 class MediumDetailScreen extends StatelessWidget {
   Widget _createSectionTitle(BuildContext context, String title) {
@@ -39,7 +40,9 @@ class MediumDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final medium = ModalRoute.of(context)!.settings.arguments as Medium;
+    final Map args = ModalRoute.of(context)!.settings.arguments as Map;
+    final Medium medium = args['medium'];
+    final List<QueryDocumentSnapshot<Map<String, dynamic>>> docs = args['docs'];
 
     return Scaffold(
       backgroundColor: Colors.blueGrey[50],
@@ -163,7 +166,14 @@ class MediumDetailScreen extends StatelessWidget {
                       child: Column(
                         children: <Widget>[
                           Container(
-                            child: mediumFromFirestore(medium.complement),
+                            child: listMedia(
+                              docs: docs
+                                  .where(
+                                    (e) => medium.complement
+                                        .contains(e.get('initials')),
+                                  )
+                                  .toList(),
+                            ),
                             height: MediaQuery.of(context).size.height * 0.15,
                             width: MediaQuery.of(context).size.width * 0.9,
                           )

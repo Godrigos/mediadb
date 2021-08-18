@@ -22,7 +22,10 @@ class HelpScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.only(
+                  left: 10,
+                  right: 5,
+                ),
                 child: Row(
                   children: [
                     Image.asset(
@@ -30,10 +33,15 @@ class HelpScreen extends StatelessWidget {
                       height: 35,
                       width: 35,
                     ),
-                    Text(
-                      ' ' + AppLocalizations.of(context)!.complement,
-                      style: TextStyle(
-                        fontSize: 16,
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text(
+                          AppLocalizations.of(context)!.complement,
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -43,6 +51,7 @@ class HelpScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   left: 10,
                   top: 5,
+                  right: 5,
                 ),
                 child: Row(
                   children: [
@@ -51,10 +60,15 @@ class HelpScreen extends StatelessWidget {
                       height: 35,
                       width: 35,
                     ),
-                    Text(
-                      ' ' + AppLocalizations.of(context)!.liquid,
-                      style: TextStyle(
-                        fontSize: 16,
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text(
+                          AppLocalizations.of(context)!.liquid,
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -64,6 +78,7 @@ class HelpScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   left: 10,
                   top: 5,
+                  right: 5,
                 ),
                 child: Row(
                   children: [
@@ -72,10 +87,15 @@ class HelpScreen extends StatelessWidget {
                       height: 35,
                       width: 35,
                     ),
-                    Text(
-                      ' ' + AppLocalizations.of(context)!.semisolid,
-                      style: TextStyle(
-                        fontSize: 16,
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text(
+                          AppLocalizations.of(context)!.semisolid,
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -85,6 +105,7 @@ class HelpScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   left: 10,
                   top: 5,
+                  right: 5,
                 ),
                 child: Row(
                   children: [
@@ -93,10 +114,15 @@ class HelpScreen extends StatelessWidget {
                       height: 35,
                       width: 35,
                     ),
-                    Text(
-                      ' ' + AppLocalizations.of(context)!.solid,
-                      style: TextStyle(
-                        fontSize: 16,
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text(
+                          AppLocalizations.of(context)!.solid,
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -106,6 +132,7 @@ class HelpScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   left: 10,
                   top: 5,
+                  right: 5,
                 ),
                 child: Row(
                   children: [
@@ -114,10 +141,16 @@ class HelpScreen extends StatelessWidget {
                       height: 35,
                       width: 35,
                     ),
-                    Text(
-                      ' ' + AppLocalizations.of(context)!.undefined,
-                      style: TextStyle(
-                        fontSize: 16,
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text(
+                          AppLocalizations.of(context)!.undefined,
+                          softWrap: true,
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
                       ),
                     ),
                   ],

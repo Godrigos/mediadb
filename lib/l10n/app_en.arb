@@ -43,7 +43,7 @@
     "@solid": {
       "description": "A medium physical state."
     },
-    "undefined": "Undefined medium physical state.",
+    "undefined": "Undefined medium physical state. A logical entry, should not appear in media list.",
     "@undefined": {
       "description": "A medium physical state."
     },
@@ -54,5 +54,17 @@
     "helpIcons": "Media Icons",
     "@helpIcons": {
       "description": "Title for media icons on help page."
+    },
+    "nothing": "No recipe available.",
+    "@nothing": {
+      "description": "Show text if there is no item in this category."
+    },
+    "favorite": "Favorites",
+    "@favorite": {
+      "description": "Favorite category title."
+    },
+    "allmedia": "All Media",
+    "@allmedia": {
+      "description": "All Media category title."
     }
 }

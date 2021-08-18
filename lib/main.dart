@@ -6,10 +6,11 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:mediadb/views/help_screen.dart';
 
+import '/views/categories_screen.dart';
+import '/views/help_screen.dart';
+import '/views/list_screen.dart';
 import 'models/favorite.dart';
-import 'views/media_list_screen.dart';
 import 'utils/app_routes.dart';
 import 'views/medium_detail_screen.dart';
 
@@ -71,7 +72,9 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       routes: {
         AppRoutes.MEDIUM_DETAIL: (ctx) => MediumDetailScreen(),
+        AppRoutes.MEDIA_LIST: (ctx) => ListScreen(),
         AppRoutes.HELP: (ctx) => HelpScreen(),
+        AppRoutes.MEDIA_CATEGORIES: (ctx) => CategoriesScreen(),
       },
     );
   }
@@ -99,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: SafeArea(
-        child: MediaListScreen(),
+        child: CategoriesScreen(),
       ),
     );
   }
