@@ -42,7 +42,7 @@ class MediumDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Map args = ModalRoute.of(context)!.settings.arguments as Map;
     final Medium medium = args['medium'];
-    final List<QueryDocumentSnapshot<Map<String, dynamic>>> docs = args['docs'];
+    final List<QueryDocumentSnapshot<Map<String, dynamic>>> docs = args['list'];
 
     return Scaffold(
       backgroundColor: Colors.blueGrey[50],

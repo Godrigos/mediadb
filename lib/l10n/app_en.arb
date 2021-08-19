@@ -31,6 +31,10 @@
     "@complement": {
       "description": "Solution utilization."
     },
+    "complementGrid": "Complementary Solution",
+    "@complementGrid": {
+      "description": "Title of a gridtile."
+    },
     "liquid": "Liquid medium.",
     "@liquid": {
       "description": "A medium physical state."
@@ -55,7 +59,7 @@
     "@helpIcons": {
       "description": "Title for media icons on help page."
     },
-    "nothing": "No recipe available.",
+    "nothing": "No recipe available",
     "@nothing": {
       "description": "Show text if there is no item in this category."
     },

@@ -10,8 +10,13 @@ import '/utils/app_routes.dart';
 class MediumCard extends StatefulWidget {
   final List<QueryDocumentSnapshot<Map<String, dynamic>>> docs;
   final int i;
+  final List<QueryDocumentSnapshot<Map<String, dynamic>>> list;
 
-  const MediumCard({required this.docs, required this.i});
+  const MediumCard({
+    required this.docs,
+    required this.i,
+    required this.list,
+  });
 
   @override
   _MediumCardState createState() => _MediumCardState();
@@ -40,7 +45,11 @@ class _MediumCardState extends State<MediumCard> {
         onTap: () {
           Navigator.of(context).pushNamed(
             AppRoutes.MEDIUM_DETAIL,
-            arguments: {'medium': medium, 'docs': widget.docs},
+            arguments: {
+              'medium': medium,
+              'docs': widget.docs,
+              'list': widget.list,
+            },
           );
         },
         leading: CircleAvatar(

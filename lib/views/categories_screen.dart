@@ -22,10 +22,28 @@ class CategoriesScreen extends StatelessWidget {
           );
         }
 
+        // Open favorites Hivebox
         var box = Hive.box<Favorite>('favorites');
-        List<QueryDocumentSnapshot<Map<String, dynamic>>> favorites = [];
+        // Import data from Firestore as a List
         List<QueryDocumentSnapshot<Map<String, dynamic>>> docs =
             media.data!.docs;
+
+        // Create All Media List (no Complementary Solutions)
+        List<QueryDocumentSnapshot<Map<String, dynamic>>> allMedia = [];
+        // Create Complementary Solutions List
+        List<QueryDocumentSnapshot<Map<String, dynamic>>> complement = [];
+        docs.forEach(
+          (e) {
+            if (e.get("isComplement") == false) {
+              allMedia.add(e);
+            } else {
+              complement.add(e);
+            }
+          },
+        );
+
+        // Create Favorites media list
+        List<QueryDocumentSnapshot<Map<String, dynamic>>> favorites = [];
         docs.forEach(
           (e) {
             if (box.get(e.get('initials')) == null) {
@@ -52,10 +70,18 @@ class CategoriesScreen extends StatelessWidget {
             GridTile(
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pushNamed(
-                    AppRoutes.MEDIA_LIST,
-                    arguments: docs,
-                  );
+                  allMedia.isNotEmpty
+                      ? Navigator.of(context).pushNamed(
+                          AppRoutes.MEDIA_LIST,
+                          arguments: {'docs': allMedia, 'list': docs},
+                        )
+                      : ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            duration: const Duration(seconds: 2),
+                            content:
+                                Text(AppLocalizations.of(context)!.nothing),
+                          ),
+                        );
                 },
                 child: Image(
                   fit: BoxFit.cover,
@@ -67,6 +93,8 @@ class CategoriesScreen extends StatelessWidget {
                 title: Text(
                   AppLocalizations.of(context)!.allmedia,
                   textAlign: TextAlign.center,
+                  overflow: TextOverflow.visible,
+                  softWrap: true,
                 ),
               ),
             ),
@@ -76,7 +104,7 @@ class CategoriesScreen extends StatelessWidget {
                   favorites.isNotEmpty
                       ? Navigator.of(context).pushNamed(
                           AppRoutes.MEDIA_LIST,
-                          arguments: favorites,
+                          arguments: {'docs': favorites, 'list': docs},
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -96,6 +124,39 @@ class CategoriesScreen extends StatelessWidget {
                 title: Text(
                   AppLocalizations.of(context)!.favorite,
                   textAlign: TextAlign.center,
+                  overflow: TextOverflow.visible,
+                  softWrap: true,
+                ),
+              ),
+            ),
+            GridTile(
+              child: GestureDetector(
+                onTap: () {
+                  complement.isNotEmpty
+                      ? Navigator.of(context).pushNamed(
+                          AppRoutes.MEDIA_LIST,
+                          arguments: {'docs': complement, 'list': docs},
+                        )
+                      : ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            duration: const Duration(seconds: 2),
+                            content:
+                                Text(AppLocalizations.of(context)!.nothing),
+                          ),
+                        );
+                },
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/icons/becker.png'),
+                ),
+              ),
+              footer: GridTileBar(
+                backgroundColor: Colors.black54,
+                title: Text(
+                  AppLocalizations.of(context)!.complementGrid,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.visible,
+                  softWrap: true,
                 ),
               ),
             ),

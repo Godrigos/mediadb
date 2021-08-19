@@ -7,13 +7,14 @@
     "ps": "Observação",
     "reference": "Referência",
     "complement": "Solução complementar para meio.",
+    "complementGrid": "Solução Complementar",
     "liquid": "Meio líquido.",
     "semisolid": "Meio semi-sólido.",
     "solid": "Meio sólido.",
     "undefined": "Estado do meio indefinido. Uma entrada lógica, não deve aparecer na lista de meios.",
     "help": "Ajuda",
     "helpIcons": "Ícones dos Meios",
-    "nothing": "Nenhuma receita disponível.",
+    "nothing": "Nenhuma receita disponível",
     "favorite": "Favoritos",
     "allmedia": "Todos os Meios"
 }

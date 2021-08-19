@@ -6,14 +6,16 @@ import 'package:mediadb/widgets/list_Media.dart';
 class ListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final docs = ModalRoute.of(context)!.settings.arguments
-        as List<QueryDocumentSnapshot<Map<String, dynamic>>>;
+    final Map args = ModalRoute.of(context)!.settings.arguments as Map;
+    final List<QueryDocumentSnapshot<Map<String, dynamic>>> docs = args['docs'];
+    final List<QueryDocumentSnapshot<Map<String, dynamic>>> list = args['list'];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.appTitle),
       ),
       body: SafeArea(
-        child: listMedia(docs: docs),
+        child: listMedia(docs: docs, list: list),
       ),
     );
   }
