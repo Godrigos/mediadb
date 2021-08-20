@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.of(context).pushNamed(AppRoutes.HELP);
             },
-            icon: const Icon(Icons.help),
+            icon: const Icon(Icons.help_outline),
           )
         ],
       ),

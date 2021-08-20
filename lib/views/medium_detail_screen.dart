@@ -48,6 +48,12 @@ class MediumDetailScreen extends StatelessWidget {
       backgroundColor: Colors.blueGrey[50],
       appBar: AppBar(
         title: Text(medium.initials),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.calculate_rounded),
+          )
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(

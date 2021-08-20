@@ -32,20 +32,24 @@ class CategoriesScreen extends StatelessWidget {
         List<QueryDocumentSnapshot<Map<String, dynamic>>> allMedia = [];
         // Create Complementary Solutions List
         List<QueryDocumentSnapshot<Map<String, dynamic>>> complement = [];
+        // Create Favorites media list
+        List<QueryDocumentSnapshot<Map<String, dynamic>>> favorites = [];
+        // Create Bacteria media list
+        List<QueryDocumentSnapshot<Map<String, dynamic>>> bacteria = [];
+        // Create Fungi media list
+        List<QueryDocumentSnapshot<Map<String, dynamic>>> fungi = [];
+        // Create Microalgae media list
+        List<QueryDocumentSnapshot<Map<String, dynamic>>> microalgae = [];
+
         docs.forEach(
           (e) {
+            // Evaluate complementary solution entry
             if (e.get("isComplement") == false) {
               allMedia.add(e);
             } else {
               complement.add(e);
             }
-          },
-        );
-
-        // Create Favorites media list
-        List<QueryDocumentSnapshot<Map<String, dynamic>>> favorites = [];
-        docs.forEach(
-          (e) {
+            // Evaluate favorite entry
             if (box.get(e.get('initials')) == null) {
               box.put(
                 e.get('initials'),
@@ -56,6 +60,16 @@ class CategoriesScreen extends StatelessWidget {
               );
             }
             if (box.get(e.get('initials'))!.isFavorite) favorites.add(e);
+            // Evaluate organism entry
+            if (e.get('organism').contains('Bacteria')) {
+              bacteria.add(e);
+            }
+            if (e.get('organism').contains('Fungi')) {
+              fungi.add(e);
+            }
+            if (e.get('organism').contains('Microalgae')) {
+              microalgae.add(e);
+            }
           },
         );
 
@@ -67,6 +81,7 @@ class CategoriesScreen extends StatelessWidget {
           ),
           padding: const EdgeInsets.all(30),
           children: [
+            // All Media Grid Tile
             GridTile(
               child: GestureDetector(
                 onTap: () {
@@ -98,6 +113,7 @@ class CategoriesScreen extends StatelessWidget {
                 ),
               ),
             ),
+            // Favorites Grid Tile
             GridTile(
               child: GestureDetector(
                 onTap: () {
@@ -129,6 +145,103 @@ class CategoriesScreen extends StatelessWidget {
                 ),
               ),
             ),
+            // Bacteria Media Grid Tile
+            GridTile(
+              child: GestureDetector(
+                onTap: () {
+                  bacteria.isNotEmpty
+                      ? Navigator.of(context).pushNamed(
+                          AppRoutes.MEDIA_LIST,
+                          arguments: {'docs': bacteria, 'list': docs},
+                        )
+                      : ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            duration: const Duration(seconds: 2),
+                            content:
+                                Text(AppLocalizations.of(context)!.nothing),
+                          ),
+                        );
+                },
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/icons/bacteria.png'),
+                ),
+              ),
+              footer: GridTileBar(
+                backgroundColor: Colors.black54,
+                title: Text(
+                  'Bacteria',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.visible,
+                  softWrap: true,
+                ),
+              ),
+            ),
+            // Fungi Media Grid Tile
+            GridTile(
+              child: GestureDetector(
+                onTap: () {
+                  fungi.isNotEmpty
+                      ? Navigator.of(context).pushNamed(
+                          AppRoutes.MEDIA_LIST,
+                          arguments: {'docs': fungi, 'list': docs},
+                        )
+                      : ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            duration: const Duration(seconds: 2),
+                            content:
+                                Text(AppLocalizations.of(context)!.nothing),
+                          ),
+                        );
+                },
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/icons/fungi.png'),
+                ),
+              ),
+              footer: GridTileBar(
+                backgroundColor: Colors.black54,
+                title: Text(
+                  'Fungi',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.visible,
+                  softWrap: true,
+                ),
+              ),
+            ),
+            // Microalgae Grid Tile
+            GridTile(
+              child: GestureDetector(
+                onTap: () {
+                  microalgae.isNotEmpty
+                      ? Navigator.of(context).pushNamed(
+                          AppRoutes.MEDIA_LIST,
+                          arguments: {'docs': microalgae, 'list': docs},
+                        )
+                      : ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            duration: const Duration(seconds: 2),
+                            content:
+                                Text(AppLocalizations.of(context)!.nothing),
+                          ),
+                        );
+                },
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/icons/microalgae.png'),
+                ),
+              ),
+              footer: GridTileBar(
+                backgroundColor: Colors.black54,
+                title: Text(
+                  'Microalgae',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.visible,
+                  softWrap: true,
+                ),
+              ),
+            ),
+            // Complementary Solutions Grid Tile
             GridTile(
               child: GestureDetector(
                 onTap: () {
