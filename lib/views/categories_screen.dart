@@ -44,10 +44,11 @@ class CategoriesScreen extends StatelessWidget {
         docs.forEach(
           (e) {
             // Evaluate complementary solution entry
-            if (e.get("isComplement") == false) {
-              allMedia.add(e);
-            } else {
+            if (e.data().containsKey('isComplement') &&
+                e.get("isComplement") == true) {
               complement.add(e);
+            } else {
+              allMedia.add(e);
             }
             // Evaluate favorite entry
             if (box.get(e.get('initials')) == null) {
@@ -61,13 +62,16 @@ class CategoriesScreen extends StatelessWidget {
             }
             if (box.get(e.get('initials'))!.isFavorite) favorites.add(e);
             // Evaluate organism entry
-            if (e.get('organism').contains('Bacteria')) {
+            if (e.data().containsKey('organism') &&
+                e.get('organism').contains('Bacteria')) {
               bacteria.add(e);
             }
-            if (e.get('organism').contains('Fungi')) {
+            if (e.data().containsKey('organism') &&
+                e.get('organism').contains('Fungi')) {
               fungi.add(e);
             }
-            if (e.get('organism').contains('Microalgae')) {
+            if (e.data().containsKey('organism') &&
+                e.get('organism').contains('Microalgae')) {
               microalgae.add(e);
             }
           },
