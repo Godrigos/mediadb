@@ -88,7 +88,11 @@ class CategoriesScreen extends StatelessWidget {
                   allMedia.isNotEmpty
                       ? Navigator.of(context).pushNamed(
                           AppRoutes.MEDIA_LIST,
-                          arguments: {'docs': allMedia, 'list': docs},
+                          arguments: {
+                            'docs': allMedia,
+                            'list': docs,
+                            'title': AppLocalizations.of(context)!.allmedia,
+                          },
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -120,7 +124,11 @@ class CategoriesScreen extends StatelessWidget {
                   favorites.isNotEmpty
                       ? Navigator.of(context).pushNamed(
                           AppRoutes.MEDIA_LIST,
-                          arguments: {'docs': favorites, 'list': docs},
+                          arguments: {
+                            'docs': favorites,
+                            'list': docs,
+                            'title': AppLocalizations.of(context)!.favorite,
+                          },
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -152,7 +160,11 @@ class CategoriesScreen extends StatelessWidget {
                   bacteria.isNotEmpty
                       ? Navigator.of(context).pushNamed(
                           AppRoutes.MEDIA_LIST,
-                          arguments: {'docs': bacteria, 'list': docs},
+                          arguments: {
+                            'docs': bacteria,
+                            'list': docs,
+                            'title': 'Bacteria',
+                          },
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -184,7 +196,11 @@ class CategoriesScreen extends StatelessWidget {
                   fungi.isNotEmpty
                       ? Navigator.of(context).pushNamed(
                           AppRoutes.MEDIA_LIST,
-                          arguments: {'docs': fungi, 'list': docs},
+                          arguments: {
+                            'docs': fungi,
+                            'list': docs,
+                            'title': 'Fungi',
+                          },
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -216,7 +232,11 @@ class CategoriesScreen extends StatelessWidget {
                   microalgae.isNotEmpty
                       ? Navigator.of(context).pushNamed(
                           AppRoutes.MEDIA_LIST,
-                          arguments: {'docs': microalgae, 'list': docs},
+                          arguments: {
+                            'docs': microalgae,
+                            'list': docs,
+                            'title': 'Microalgae',
+                          },
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -248,7 +268,12 @@ class CategoriesScreen extends StatelessWidget {
                   complement.isNotEmpty
                       ? Navigator.of(context).pushNamed(
                           AppRoutes.MEDIA_LIST,
-                          arguments: {'docs': complement, 'list': docs},
+                          arguments: {
+                            'docs': complement,
+                            'list': docs,
+                            'title':
+                                AppLocalizations.of(context)!.complementGrid,
+                          },
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
