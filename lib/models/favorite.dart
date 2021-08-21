@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -19,4 +20,25 @@ class Favorite extends HiveObject with ChangeNotifier {
     i.save();
     notifyListeners();
   }
+}
+
+updateFavoritesList(List<QueryDocumentSnapshot<Map<String, dynamic>>> docs) {
+  var box = Hive.box<Favorite>('favorites');
+  List<QueryDocumentSnapshot<Map<String, dynamic>>> favorites = [];
+
+  docs.forEach(
+    (e) {
+      if (box.get(e.get('initials')) == null) {
+        box.put(
+          e.get('initials'),
+          Favorite(
+            initials: e.get('initials'),
+            isFavorite: false,
+          ),
+        );
+      }
+      if (box.get(e.get('initials'))!.isFavorite) favorites.add(e);
+    },
+  );
+  return favorites;
 }

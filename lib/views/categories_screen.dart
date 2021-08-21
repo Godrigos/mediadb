@@ -32,8 +32,6 @@ class CategoriesScreen extends StatelessWidget {
         List<QueryDocumentSnapshot<Map<String, dynamic>>> allMedia = [];
         // Create Complementary Solutions List
         List<QueryDocumentSnapshot<Map<String, dynamic>>> complement = [];
-        // Create Favorites media list
-        List<QueryDocumentSnapshot<Map<String, dynamic>>> favorites = [];
         // Create Bacteria media list
         List<QueryDocumentSnapshot<Map<String, dynamic>>> bacteria = [];
         // Create Fungi media list
@@ -50,17 +48,6 @@ class CategoriesScreen extends StatelessWidget {
             } else {
               allMedia.add(e);
             }
-            // Evaluate favorite entry
-            if (box.get(e.get('initials')) == null) {
-              box.put(
-                e.get('initials'),
-                Favorite(
-                  initials: e.get('initials'),
-                  isFavorite: false,
-                ),
-              );
-            }
-            if (box.get(e.get('initials'))!.isFavorite) favorites.add(e);
             // Evaluate organism entry
             if (e.data().containsKey('organism') &&
                 e.get('organism').contains('Bacteria')) {
@@ -100,7 +87,7 @@ class CategoriesScreen extends StatelessWidget {
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            duration: const Duration(seconds: 2),
+                            duration: const Duration(seconds: 1),
                             content:
                                 Text(AppLocalizations.of(context)!.nothing),
                           ),
@@ -125,6 +112,9 @@ class CategoriesScreen extends StatelessWidget {
             GridTile(
               child: GestureDetector(
                 onTap: () {
+                  List<QueryDocumentSnapshot<Map<String, dynamic>>> favorites =
+                      [];
+                  favorites = updateFavoritesList(docs);
                   favorites.isNotEmpty
                       ? Navigator.of(context).pushNamed(
                           AppRoutes.MEDIA_LIST,
@@ -136,7 +126,7 @@ class CategoriesScreen extends StatelessWidget {
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            duration: const Duration(seconds: 2),
+                            duration: const Duration(seconds: 1),
                             content:
                                 Text(AppLocalizations.of(context)!.nothing),
                           ),
@@ -172,7 +162,7 @@ class CategoriesScreen extends StatelessWidget {
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            duration: const Duration(seconds: 2),
+                            duration: const Duration(seconds: 1),
                             content:
                                 Text(AppLocalizations.of(context)!.nothing),
                           ),
@@ -208,7 +198,7 @@ class CategoriesScreen extends StatelessWidget {
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            duration: const Duration(seconds: 2),
+                            duration: const Duration(seconds: 1),
                             content:
                                 Text(AppLocalizations.of(context)!.nothing),
                           ),
@@ -244,7 +234,7 @@ class CategoriesScreen extends StatelessWidget {
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            duration: const Duration(seconds: 2),
+                            duration: const Duration(seconds: 1),
                             content:
                                 Text(AppLocalizations.of(context)!.nothing),
                           ),
@@ -281,7 +271,7 @@ class CategoriesScreen extends StatelessWidget {
                         )
                       : ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            duration: const Duration(seconds: 2),
+                            duration: const Duration(seconds: 1),
                             content:
                                 Text(AppLocalizations.of(context)!.nothing),
                           ),
