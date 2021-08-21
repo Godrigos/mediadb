@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import '/utils/app_routes.dart';
 import '/models/favorite.dart';
@@ -24,11 +25,14 @@ class CategoriesScreen extends StatelessWidget {
         // Import data from Firestore as a List
         List<QueryDocumentSnapshot<Map<String, dynamic>>> docs =
             media.data!.docs;
+        Box<Favorite> box = Hive.box<Favorite>('favorites');
 
         // Create All Media List (no Complementary Solutions)
         List<QueryDocumentSnapshot<Map<String, dynamic>>> allMedia = [];
         // Create Complementary Solutions List
         List<QueryDocumentSnapshot<Map<String, dynamic>>> complement = [];
+        // Create Favorites List
+        List<QueryDocumentSnapshot<Map<String, dynamic>>> favorites = [];
         // Create Bacteria media list
         List<QueryDocumentSnapshot<Map<String, dynamic>>> bacteria = [];
         // Create Fungi media list
@@ -44,6 +48,16 @@ class CategoriesScreen extends StatelessWidget {
               complement.add(e);
             } else {
               allMedia.add(e);
+            }
+            // Evaluate Favorites
+            if (box.get(e.get('initials')) == null) {
+              box.put(
+                e.get('initials'),
+                Favorite(
+                  initials: e.get('initials'),
+                  isFavorite: false,
+                ),
+              );
             }
             // Evaluate organism entry
             if (e.data().containsKey('organism') &&
@@ -109,8 +123,6 @@ class CategoriesScreen extends StatelessWidget {
             GridTile(
               child: GestureDetector(
                 onTap: () {
-                  List<QueryDocumentSnapshot<Map<String, dynamic>>> favorites =
-                      [];
                   favorites = updateFavoritesList(docs);
                   favorites.isNotEmpty
                       ? Navigator.of(context).pushNamed(
