@@ -70,5 +70,13 @@
     "allmedia": "All Media",
     "@allmedia": {
       "description": "All Media category title."
+    },
+    "volume": "Desired volume (L)",
+    "@volume": {
+      "description": "Desired medium volume for calculation."
+    },
+    "calculate": "Calculate",
+    "@calculate": {
+      "description": "Calculate button text."
     }
 }

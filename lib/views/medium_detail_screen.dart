@@ -64,61 +64,46 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                 builder: (BuildContext context) {
                   var multiplierController = TextEditingController();
                   return AlertDialog(
-                    content: Stack(
-                      children: [
-                        Positioned(
-                          right: -40.0,
-                          top: -40.0,
-                          child: InkResponse(
-                            onTap: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: CircleAvatar(
-                              child: Icon(Icons.close),
-                              backgroundColor: Colors.red,
+                    content: Form(
+                      key: _formKey,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: TextFormField(
+                              inputFormatters: [
+                                FilteringTextInputFormatter.allow(
+                                  RegExp(r'(^[0-9]*(\.[0-9]{0,5})?)'),
+                                ),
+                              ],
+                              controller: multiplierController,
+                              keyboardType: TextInputType.numberWithOptions(
+                                decimal: true,
+                              ),
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: AppLocalizations.of(context)!.volume,
+                              ),
                             ),
                           ),
-                        ),
-                        Form(
-                          key: _formKey,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: TextFormField(
-                                  inputFormatters: [
-                                    FilteringTextInputFormatter.allow(
-                                      RegExp(r'(^\d*\.?\d*)'),
-                                    ),
-                                  ],
-                                  controller: multiplierController,
-                                  keyboardType: TextInputType.numberWithOptions(
-                                    signed: false,
-                                    decimal: true,
-                                  ),
-                                  decoration: InputDecoration(
-                                    border: OutlineInputBorder(),
-                                    hintText: 'Desired Volume (L)',
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: ElevatedButton(
-                                  child: Text("Calculate"),
-                                  onPressed: () {
-                                    print(
-                                      double.parse(multiplierController.text),
-                                    );
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                              ),
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: ElevatedButton(
+                              child:
+                                  Text(AppLocalizations.of(context)!.calculate),
+                              onPressed: () {
+                                if (multiplierController.text.isNotEmpty) {
+                                  print(
+                                    double.parse(multiplierController.text),
+                                  );
+                                }
+                                Navigator.of(context).pop();
+                              },
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },

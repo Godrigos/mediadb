@@ -16,5 +16,7 @@
     "helpIcons": "Ícones dos Meios",
     "nothing": "Nenhuma receita disponível",
     "favorite": "Favoritos",
-    "allmedia": "Todos os Meios"
+    "allmedia": "Todos os Meios",
+    "volume": "Volume desejado (L)",
+    "calculate": "Calcular"
 }
