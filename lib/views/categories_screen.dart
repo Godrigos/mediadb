@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '/utils/app_routes.dart';
@@ -22,8 +21,6 @@ class CategoriesScreen extends StatelessWidget {
           );
         }
 
-        // Open favorites Hivebox
-        var box = Hive.box<Favorite>('favorites');
         // Import data from Firestore as a List
         List<QueryDocumentSnapshot<Map<String, dynamic>>> docs =
             media.data!.docs;
