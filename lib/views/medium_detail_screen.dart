@@ -7,7 +7,14 @@ import '../widgets/list_Media.dart';
 import '/widgets/ingredients_list.dart';
 import '/widgets/steps_list.dart';
 
-class MediumDetailScreen extends StatelessWidget {
+class MediumDetailScreen extends StatefulWidget {
+  @override
+  _MediumDetailScreenState createState() => _MediumDetailScreenState();
+}
+
+class _MediumDetailScreenState extends State<MediumDetailScreen> {
+  final _formKey = GlobalKey<FormState>();
+
   Widget _createSectionTitle(BuildContext context, String title) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 5),
@@ -50,7 +57,67 @@ class MediumDetailScreen extends StatelessWidget {
         title: Text(medium.initials),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  var multiplierController = TextEditingController();
+                  return AlertDialog(
+                    content: Stack(
+                      children: [
+                        Positioned(
+                          right: -40.0,
+                          top: -40.0,
+                          child: InkResponse(
+                            onTap: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: CircleAvatar(
+                              child: Icon(Icons.close),
+                              backgroundColor: Colors.red,
+                            ),
+                          ),
+                        ),
+                        Form(
+                          key: _formKey,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: TextFormField(
+                                  controller: multiplierController,
+                                  keyboardType: TextInputType.numberWithOptions(
+                                    signed: false,
+                                    decimal: true,
+                                  ),
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    hintText: 'Desired Volume (L)',
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: ElevatedButton(
+                                  child: Text("Calculate"),
+                                  onPressed: () {
+                                    print(
+                                      double.parse(multiplierController.text),
+                                    );
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
             icon: const Icon(Icons.calculate_rounded),
           )
         ],
