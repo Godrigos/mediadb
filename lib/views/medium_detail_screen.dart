@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '/models/medium.dart';
@@ -86,6 +87,11 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                               Padding(
                                 padding: const EdgeInsets.all(5.0),
                                 child: TextFormField(
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.allow(
+                                      RegExp(r'(^\d*\.?\d*)'),
+                                    ),
+                                  ],
                                   controller: multiplierController,
                                   keyboardType: TextInputType.numberWithOptions(
                                     signed: false,
