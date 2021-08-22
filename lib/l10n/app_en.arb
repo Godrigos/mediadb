@@ -71,7 +71,7 @@
     "@allmedia": {
       "description": "All Media category title."
     },
-    "volume": "Desired volume (L)",
+    "volume": "Desired volume",
     "@volume": {
       "description": "Desired medium volume for calculation."
     },

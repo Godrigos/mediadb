@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '/utils/custom_dialog.dart';
 import '/models/medium.dart';
 import '../widgets/list_Media.dart';
 import '/widgets/ingredients_list.dart';
@@ -59,55 +59,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  var multiplierController = TextEditingController();
-                  return AlertDialog(
-                    content: Form(
-                      key: _formKey,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: TextFormField(
-                              inputFormatters: [
-                                FilteringTextInputFormatter.allow(
-                                  RegExp(r'(^[0-9]*(\.[0-9]{0,5})?)'),
-                                ),
-                              ],
-                              controller: multiplierController,
-                              keyboardType: TextInputType.numberWithOptions(
-                                decimal: true,
-                              ),
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                hintText: AppLocalizations.of(context)!.volume,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: ElevatedButton(
-                              child:
-                                  Text(AppLocalizations.of(context)!.calculate),
-                              onPressed: () {
-                                if (multiplierController.text.isNotEmpty) {
-                                  print(
-                                    double.parse(multiplierController.text),
-                                  );
-                                }
-                                Navigator.of(context).pop();
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              );
+              customDialog(context, _formKey);
             },
             icon: const Icon(Icons.calculate_rounded),
           )
