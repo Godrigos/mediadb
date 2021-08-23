@@ -78,5 +78,9 @@
     "calculate": "Calculate",
     "@calculate": {
       "description": "Calculate button text."
+    },
+    "exit": "Exit",
+    "@exit": {
+      "description": "Exit button text."
     }
 }

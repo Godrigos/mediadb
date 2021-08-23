@@ -59,7 +59,12 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              customDialog(context, _formKey);
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return CustomDialog(formKey: _formKey);
+                },
+              );
             },
             icon: const Icon(Icons.calculate_rounded),
           )
