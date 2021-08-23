@@ -79,23 +79,41 @@ class Medium {
       });
     return ingredients;
   }
+
+  Map<String, Quantity> multiply(double multiplier, String targetUnit) {
+    var multipliedIngredients = ingredients;
+    if (multipliedIngredients['dH₂O']!.unit == 'L' && targetUnit == 'mL') {
+      multipliedIngredients.values.forEach((e) {
+        e.amount = (e.amount * multiplier) / 1000;
+        e.unit = targetUnit;
+      });
+      return multipliedIngredients;
+    } else if (multipliedIngredients['dH₂O']!.unit == 'mL' &&
+        targetUnit == 'L') {
+      multipliedIngredients.values.forEach((e) {
+        e.amount = (e.amount * multiplier) * 1000;
+        e.unit = targetUnit;
+      });
+      return multipliedIngredients;
+    } else {
+      multipliedIngredients.values.forEach((e) {
+        e.amount = e.amount * multiplier;
+        e.unit = targetUnit;
+      });
+      return multipliedIngredients;
+    }
+  }
 }
 
 class Quantity {
-  final double amount;
-  final String unit;
+  double amount;
+  String unit;
 
-  const Quantity({
+  Quantity({
     required this.amount,
     required this.unit,
   });
   String toString() => '$amount $unit';
-  Quantity multiply(double multiplier) {
-    return Quantity(
-      amount: this.amount * multiplier.abs(),
-      unit: unit,
-    );
-  }
 }
 
 enum PhysicalState {

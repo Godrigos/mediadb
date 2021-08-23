@@ -22,13 +22,13 @@ class _CustomDialogState extends State<CustomDialog> {
     return AlertDialog(
       title: Text(AppLocalizations.of(context)!.volume),
       content: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         mainAxisSize: MainAxisSize.min,
         children: [
           Form(
             key: widget.formKey,
             child: Padding(
-              padding: const EdgeInsets.all(2.0),
+              padding: const EdgeInsets.all(0),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.2,
                 child: TextFormField(

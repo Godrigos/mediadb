@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '/utils/custom_dialog.dart';
+import '../widgets/custom_dialog.dart';
 import '/models/medium.dart';
 import '../widgets/list_Media.dart';
 import '/widgets/ingredients_list.dart';
@@ -64,6 +64,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                 builder: (BuildContext context) {
                   return CustomDialog(formKey: _formKey);
                 },
+                barrierDismissible: false,
               );
             },
             icon: const Icon(Icons.calculate_rounded),
