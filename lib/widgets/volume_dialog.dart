@@ -68,7 +68,7 @@ class _VolumeDialogState extends State<VolumeDialog> {
         ),
         TextButton(
           child: Text(AppLocalizations.of(context)!.calculate),
-          onPressed: () async {
+          onPressed: () {
             if (_multiplierController.text.isNotEmpty) {
               IngredientList(
                 ingredients: multiply(

@@ -91,8 +91,7 @@ class Quantity {
     required this.amount,
     required this.unit,
   });
-  String toString() =>
-      '${amount.toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")} $unit';
+  String toString() => '${amount.toStringAsFixedNoZero(4)} $unit';
 }
 
 enum PhysicalState {
@@ -111,4 +110,9 @@ Map<String, Quantity> multiply(
     e.amount = (e.amount / initialVolume) * multiplier;
   });
   return ingredients;
+}
+
+extension Ex on double {
+  String toStringAsFixedNoZero(int n) =>
+      double.parse(this.toStringAsFixed(n)).toString();
 }
