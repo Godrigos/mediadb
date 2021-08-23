@@ -72,7 +72,7 @@ class _VolumeDialogState extends State<VolumeDialog> {
             if (double.parse(_multiplierController.text) == 0) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.red[600],
                   duration: const Duration(seconds: 2),
                   content: Text(
                     AppLocalizations.of(context)!.zero,
@@ -92,11 +92,12 @@ class _VolumeDialogState extends State<VolumeDialog> {
               );
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
+                  backgroundColor: Colors.green[600],
                   duration: const Duration(seconds: 2),
                   content: Text(
                     AppLocalizations.of(context)!.updatedVolume,
                     style: TextStyle(
-                      color: Colors.red,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
