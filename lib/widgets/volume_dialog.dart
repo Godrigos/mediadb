@@ -69,7 +69,21 @@ class _VolumeDialogState extends State<VolumeDialog> {
         TextButton(
           child: Text(AppLocalizations.of(context)!.calculate),
           onPressed: () {
-            if (_multiplierController.text.isNotEmpty) {
+            if (double.parse(_multiplierController.text) == 0) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  backgroundColor: Colors.red,
+                  duration: const Duration(seconds: 2),
+                  content: Text(
+                    AppLocalizations.of(context)!.zero,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              );
+            } else if (_multiplierController.text.isNotEmpty) {
               IngredientList(
                 ingredients: multiply(
                   widget.medium.ingredients,
@@ -83,6 +97,7 @@ class _VolumeDialogState extends State<VolumeDialog> {
                     AppLocalizations.of(context)!.updatedVolume,
                     style: TextStyle(
                       color: Colors.red,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

@@ -90,5 +90,13 @@
     "updatedVolume": "Ingredients amounts updated",
     "@updatedVolume": {
       "description": "Updated ingredients list snack bar text."
+    },
+    "validNumber": "Enter a valid number",
+    "@validNumber": {
+      "description": "Enter valid number snack bar text."
+    },
+    "zero": "Enter a value higher than zero",
+    "@zero": {
+      "description": "Zero snack bar text."
     }
 }

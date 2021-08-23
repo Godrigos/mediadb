@@ -21,5 +21,7 @@
     "calculate": "Calcular",
     "exit": "Sair",
     "copy": "Copiar",
-    "updatedVolume": "Quantidades dos ingredientes atualizada"
+    "updatedVolume": "Quantidades dos ingredientes atualizada",
+    "validNumber": "Entre um número válido",
+    "zero": "Entre um valor maior que zero"
 }
