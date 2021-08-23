@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import '/models/medium.dart';
 
 class IngredientList extends StatelessWidget {
-  final Medium medium;
+  final Map<String, Quantity> ingredients;
 
-  const IngredientList({required this.medium});
+  const IngredientList({
+    required this.ingredients,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: medium.ingredients.length,
+      itemCount: ingredients.length,
       itemBuilder: (ctx, index) {
         return Card(
           color: Colors.green[50],
@@ -20,8 +22,8 @@ class IngredientList extends StatelessWidget {
               horizontal: 10,
             ),
             child: Text(
-              '${medium.ingredients.keys.elementAt(index)} = ' +
-                  '${medium.ingredients.values.elementAt(index).toString()}',
+              '${ingredients.keys.elementAt(index)} = ' +
+                  '${ingredients.values.elementAt(index).toString()}',
               style: TextStyle(
                 fontSize: 16,
               ),

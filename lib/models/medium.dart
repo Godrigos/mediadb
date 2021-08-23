@@ -71,49 +71,28 @@ class Medium {
     Map<String, Quantity> ingredients = {};
 
     if (doc.data().containsKey('ingredients'))
-      Map.from(doc.get('ingredients')).entries.forEach((e) {
-        ingredients[e.key] = Quantity(
-          amount: e.value['amount'].toDouble(),
-          unit: e.value['unit'],
-        );
-      });
+      Map.from(doc.get('ingredients')).entries.forEach(
+        (e) {
+          ingredients[e.key] = Quantity(
+            amount: e.value['amount'].toDouble(),
+            unit: e.value['unit'],
+          );
+        },
+      );
     return ingredients;
-  }
-
-  Map<String, Quantity> multiply(double multiplier, String targetUnit) {
-    var multipliedIngredients = ingredients;
-    if (multipliedIngredients['dH₂O']!.unit == 'L' && targetUnit == 'mL') {
-      multipliedIngredients.values.forEach((e) {
-        e.amount = (e.amount * multiplier) / 1000;
-        e.unit = targetUnit;
-      });
-      return multipliedIngredients;
-    } else if (multipliedIngredients['dH₂O']!.unit == 'mL' &&
-        targetUnit == 'L') {
-      multipliedIngredients.values.forEach((e) {
-        e.amount = (e.amount * multiplier) * 1000;
-        e.unit = targetUnit;
-      });
-      return multipliedIngredients;
-    } else {
-      multipliedIngredients.values.forEach((e) {
-        e.amount = e.amount * multiplier;
-        e.unit = targetUnit;
-      });
-      return multipliedIngredients;
-    }
   }
 }
 
 class Quantity {
   double amount;
-  String unit;
+  final String unit;
 
   Quantity({
     required this.amount,
     required this.unit,
   });
-  String toString() => '$amount $unit';
+  String toString() =>
+      '${amount.toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")} $unit';
 }
 
 enum PhysicalState {
@@ -121,4 +100,15 @@ enum PhysicalState {
   semisolid, // 1
   liquid, // 2
   undefined, // 3
+}
+
+Map<String, Quantity> multiply(
+  Map<String, Quantity> ingredients,
+  double multiplier,
+) {
+  double initialVolume = ingredients['dH₂O']!.amount;
+  ingredients.values.forEach((e) {
+    e.amount = (e.amount / initialVolume) * multiplier;
+  });
+  return ingredients;
 }

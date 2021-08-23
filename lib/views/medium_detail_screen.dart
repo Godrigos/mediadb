@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../widgets/custom_dialog.dart';
+import '../widgets/volume_dialog.dart';
 import '/models/medium.dart';
 import '../widgets/list_Media.dart';
 import '/widgets/ingredients_list.dart';
@@ -14,8 +14,6 @@ class MediumDetailScreen extends StatefulWidget {
 }
 
 class _MediumDetailScreenState extends State<MediumDetailScreen> {
-  final _formKey = GlobalKey<FormState>();
-
   Widget _createSectionTitle(BuildContext context, String title) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 5),
@@ -62,7 +60,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return CustomDialog(formKey: _formKey);
+                  return VolumeDialog(medium: medium);
                 },
                 barrierDismissible: false,
               );
@@ -80,7 +78,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                     context, AppLocalizations.of(context)!.ingredients),
                 _createSectionContainer(
                   context,
-                  IngredientList(medium: medium),
+                  IngredientList(ingredients: medium.ingredients),
                   MediaQuery.of(context).size.height * 0.25,
                   MediaQuery.of(context).size.width * 0.9,
                 ),

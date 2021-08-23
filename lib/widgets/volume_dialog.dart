@@ -2,31 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class CustomDialog extends StatefulWidget {
-  final formKey;
+import '/widgets/ingredients_list.dart';
+import '/models/medium.dart';
 
-  CustomDialog({
-    required this.formKey,
+class VolumeDialog extends StatefulWidget {
+  final Medium medium;
+
+  VolumeDialog({
+    required this.medium,
   });
 
   @override
-  _CustomDialogState createState() => _CustomDialogState();
+  _VolumeDialogState createState() => _VolumeDialogState();
 }
 
-class _CustomDialogState extends State<CustomDialog> {
+class _VolumeDialogState extends State<VolumeDialog> {
   TextEditingController _multiplierController = TextEditingController();
-  String _chosenUnit = 'L';
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      buttonPadding: const EdgeInsets.all(0),
+      actionsPadding: const EdgeInsets.only(right: 20),
       title: Text(AppLocalizations.of(context)!.volume),
       content: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         mainAxisSize: MainAxisSize.min,
         children: [
           Form(
-            key: widget.formKey,
             child: Padding(
               padding: const EdgeInsets.all(0),
               child: SizedBox(
@@ -46,24 +49,11 @@ class _CustomDialogState extends State<CustomDialog> {
             ),
           ),
           SizedBox(
-            width: MediaQuery.of(context).size.width * 0.12,
-            child: DropdownButtonHideUnderline(
-              child: DropdownButton<String>(
-                value: _chosenUnit,
-                items: <String>[
-                  'L',
-                  'mL',
-                ].map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                onChanged: (String? value) {
-                  setState(() {
-                    _chosenUnit = value!;
-                  });
-                },
+            width: MediaQuery.of(context).size.width * 0.1,
+            child: Text(
+              widget.medium.ingredients['dH₂O']!.unit,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -78,18 +68,30 @@ class _CustomDialogState extends State<CustomDialog> {
         ),
         TextButton(
           child: Text(AppLocalizations.of(context)!.calculate),
-          onPressed: () {
+          onPressed: () async {
             if (_multiplierController.text.isNotEmpty) {
-              print(
-                double.parse(_multiplierController.text),
+              IngredientList(
+                ingredients: multiply(
+                  widget.medium.ingredients,
+                  double.parse(_multiplierController.text),
+                ),
+              );
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  duration: const Duration(seconds: 2),
+                  content: Text(
+                    AppLocalizations.of(context)!.updatedVolume,
+                    style: TextStyle(
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
               );
             }
             Navigator.of(context).pop();
           },
         ),
       ],
-      buttonPadding: const EdgeInsets.all(0),
-      actionsPadding: const EdgeInsets.only(right: 20),
     );
   }
 }

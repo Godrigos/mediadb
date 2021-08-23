@@ -82,5 +82,13 @@
     "exit": "Exit",
     "@exit": {
       "description": "Exit button text."
+    },
+    "copy": "Copy",
+    "@copy": {
+      "description": "Copy button text."
+    },
+    "updatedVolume": "Ingredients amounts updated",
+    "@updatedVolume": {
+      "description": "Updated ingredients list snack bar text."
     }
 }

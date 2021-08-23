@@ -19,5 +19,7 @@
     "allmedia": "Todos os Meios",
     "volume": "Volume desejado",
     "calculate": "Calcular",
-    "exit": "Sair"
+    "exit": "Sair",
+    "copy": "Copiar",
+    "updatedVolume": "Quantidades dos ingredientes atualizada"
 }
