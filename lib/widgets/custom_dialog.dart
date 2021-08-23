@@ -14,7 +14,7 @@ class CustomDialog extends StatefulWidget {
 }
 
 class _CustomDialogState extends State<CustomDialog> {
-  TextEditingController multiplierController = TextEditingController();
+  TextEditingController _multiplierController = TextEditingController();
   String _chosenUnit = 'L';
 
   @override
@@ -37,7 +37,7 @@ class _CustomDialogState extends State<CustomDialog> {
                       RegExp(r'(^[0-9]*(\.[0-9]{0,2})?)'),
                     ),
                   ],
-                  controller: multiplierController,
+                  controller: _multiplierController,
                   keyboardType: TextInputType.numberWithOptions(
                     decimal: true,
                   ),
@@ -79,9 +79,9 @@ class _CustomDialogState extends State<CustomDialog> {
         TextButton(
           child: Text(AppLocalizations.of(context)!.calculate),
           onPressed: () {
-            if (multiplierController.text.isNotEmpty) {
+            if (_multiplierController.text.isNotEmpty) {
               print(
-                double.parse(multiplierController.text),
+                double.parse(_multiplierController.text),
               );
             }
             Navigator.of(context).pop();
