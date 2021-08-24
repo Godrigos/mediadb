@@ -16,11 +16,14 @@ class CategoriesScreen extends StatelessWidget {
           .snapshots(),
       builder: (BuildContext ctx,
           AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> media) {
-        if (media.connectionState == ConnectionState.waiting) {
+        if (media.hasError)
+          return Center(
+            child: Text('Unexpected Error!'),
+          );
+        if (media.connectionState == ConnectionState.waiting)
           return Center(
             child: CircularProgressIndicator(),
           );
-        }
 
         // Import data from Firestore as a List
         List<QueryDocumentSnapshot<Map<String, dynamic>>> docs =
