@@ -84,14 +84,31 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 5),
-                  child: Text('pH: ${medium.pH}'),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Volume: ${medium.ingredients['dH₂O']}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green[600],
+                        ),
+                      ),
+                      Text(
+                        'pH: ${medium.pH}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green[600],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 _createSectionTitle(
                     context, AppLocalizations.of(context)!.preparation),
                 _createSectionContainer(
                   context,
                   StepsList(medium: medium),
-                  MediaQuery.of(context).size.height * 0.40,
+                  MediaQuery.of(context).size.height * 0.38,
                   MediaQuery.of(context).size.width * 0.9,
                 ),
                 Container(

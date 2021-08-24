@@ -14,22 +14,24 @@ class IngredientList extends StatelessWidget {
     return ListView.builder(
       itemCount: ingredients.length,
       itemBuilder: (ctx, index) {
-        return Card(
-          color: Colors.green[50],
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 1,
-              horizontal: 10,
-            ),
-            child: Text(
-              '${ingredients.keys.elementAt(index)} = ' +
-                  '${ingredients.values.elementAt(index).toString()}',
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-          ),
-        );
+        return ingredients.keys.elementAt(index) != 'dH₂O'
+            ? Card(
+                color: Colors.green[50],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 1,
+                    horizontal: 10,
+                  ),
+                  child: Text(
+                    '${ingredients.keys.elementAt(index)} = ' +
+                        '${ingredients.values.elementAt(index).toString()}',
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              )
+            : SizedBox.shrink();
       },
     );
   }
