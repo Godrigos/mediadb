@@ -103,7 +103,7 @@
     "@error": {
       "description": "Error text title."
     },
-    "errormsg": "This medium has no details.",
+    "errormsg": "This medium is missing some details.",
     "@errormsg": {
       "description": "Error text title."
     }

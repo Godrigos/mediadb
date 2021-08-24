@@ -21,7 +21,7 @@ class _VolumeDialogState extends State<VolumeDialog> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.medium.ingredients.isEmpty) {
+    if (widget.medium.ingredients['dH₂O'] == null) {
       return AlertDialog(
         buttonPadding: const EdgeInsets.all(0),
         actionsPadding: const EdgeInsets.only(right: 20),
