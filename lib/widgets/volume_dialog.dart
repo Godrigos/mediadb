@@ -21,6 +21,22 @@ class _VolumeDialogState extends State<VolumeDialog> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.medium.ingredients.isEmpty) {
+      return AlertDialog(
+        buttonPadding: const EdgeInsets.all(0),
+        actionsPadding: const EdgeInsets.only(right: 20),
+        title: Text(AppLocalizations.of(context)!.error),
+        content: Text(AppLocalizations.of(context)!.errormsg),
+        actions: [
+          TextButton(
+            child: Text(AppLocalizations.of(context)!.exit),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    }
     return AlertDialog(
       buttonPadding: const EdgeInsets.all(0),
       actionsPadding: const EdgeInsets.only(right: 20),

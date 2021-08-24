@@ -98,5 +98,13 @@
     "zero": "Enter a value higher than zero",
     "@zero": {
       "description": "Zero snack bar text."
+    },
+    "error": "Error",
+    "@error": {
+      "description": "Error text title."
+    },
+    "errormsg": "This medium has no details.",
+    "@errormsg": {
+      "description": "Error text title."
     }
 }

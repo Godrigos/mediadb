@@ -23,5 +23,7 @@
     "copy": "Copiar",
     "updatedVolume": "Quantidades dos ingredientes atualizada",
     "validNumber": "Entre um número válido",
-    "zero": "Entre um valor maior que zero"
+    "zero": "Entre um valor maior que zero",
+    "error": "Erro",
+    "errormsg": "Este meio não possui detalhes."
 }
