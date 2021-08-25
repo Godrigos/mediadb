@@ -9,6 +9,8 @@ ListView listMedia({
   List<QueryDocumentSnapshot<Map<String, dynamic>>> list = const [],
 }) {
   return ListView.builder(
+    scrollDirection: Axis.vertical,
+    shrinkWrap: true,
     itemCount: docs.length,
     itemBuilder: (ctx, i) {
       return MediumCard(

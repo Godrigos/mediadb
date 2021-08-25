@@ -199,20 +199,23 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                   ),
                 if (medium.complement.isNotEmpty)
                   SingleChildScrollView(
+                    padding: const EdgeInsets.only(bottom: 10),
                     child: Center(
                       child: Column(
+                        mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          Container(
-                            child: listMedia(
-                              docs: docs
-                                  .where(
-                                    (e) => medium.complement
-                                        .contains(e.get('initials')),
-                                  )
-                                  .toList(),
+                          Flexible(
+                            child: Container(
+                              child: listMedia(
+                                docs: docs
+                                    .where(
+                                      (e) => medium.complement
+                                          .contains(e.get('initials')),
+                                    )
+                                    .toList(),
+                              ),
+                              width: MediaQuery.of(context).size.width * 0.9,
                             ),
-                            height: MediaQuery.of(context).size.height * 0.15,
-                            width: MediaQuery.of(context).size.width * 0.9,
                           )
                         ],
                       ),
