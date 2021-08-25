@@ -207,6 +207,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                           Flexible(
                             child: Container(
                               child: listMedia(
+                                list: docs,
                                 docs: docs
                                     .where(
                                       (e) => medium.complement

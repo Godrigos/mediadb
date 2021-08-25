@@ -47,7 +47,6 @@ class _MediumCardState extends State<MediumCard> {
             AppRoutes.MEDIUM_DETAIL,
             arguments: {
               'medium': medium,
-              'docs': widget.docs,
               'list': widget.list,
             },
           );
