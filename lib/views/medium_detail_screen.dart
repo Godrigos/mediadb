@@ -87,7 +87,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                   child: Column(
                     children: [
                       Text(
-                        'Volume: ${medium.ingredients['dH₂O']}',
+                        'Volume: ${medium.ingredients['volume']}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.green[600],
@@ -116,10 +116,34 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Image.asset(
-                        medium.setBGImage().assetName,
-                        height: 22,
-                        width: 22,
+                      IconButton(
+                        onPressed: () {
+                          if (medium.use != '')
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title:
+                                      Text(AppLocalizations.of(context)!.use),
+                                  content: Text(medium.use),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: Text(
+                                          AppLocalizations.of(context)!.close),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                        },
+                        icon: Image.asset(
+                          medium.setBGImage().assetName,
+                          width: 22,
+                          height: 22,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {

@@ -25,5 +25,6 @@
     "validNumber": "Entre um número válido",
     "zero": "Entre um valor maior que zero",
     "error": "Erro",
-    "errormsg": "Faltam alguns detalhes para esse meio."
+    "errormsg": "Faltam alguns detalhes para esse meio.",
+    "use": "Uso Comum"
 }

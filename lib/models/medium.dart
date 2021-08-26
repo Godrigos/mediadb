@@ -105,7 +105,7 @@ Map<String, Quantity> multiply(
   Map<String, Quantity> ingredients,
   double multiplier,
 ) {
-  double initialVolume = ingredients['dH₂O']!.amount;
+  double initialVolume = ingredients['volume']!.amount;
   ingredients.values.forEach((e) {
     e.amount = (e.amount / initialVolume) * multiplier;
   });

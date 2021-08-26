@@ -14,7 +14,7 @@ class IngredientList extends StatelessWidget {
     return ListView.builder(
       itemCount: ingredients.length,
       itemBuilder: (ctx, index) {
-        return ingredients.keys.elementAt(index) != 'dH₂O'
+        return ingredients.keys.elementAt(index) != 'volume'
             ? Card(
                 color: Colors.green[50],
                 child: Padding(

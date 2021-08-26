@@ -106,5 +106,9 @@
     "errormsg": "This medium is missing some details.",
     "@errormsg": {
       "description": "Error text title."
+    },
+    "use": "Common Use",
+    "@use": {
+      "description": "Use button text."
     }
 }

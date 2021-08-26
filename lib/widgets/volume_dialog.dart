@@ -21,7 +21,7 @@ class _VolumeDialogState extends State<VolumeDialog> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.medium.ingredients['dH₂O'] == null) {
+    if (widget.medium.ingredients['volume'] == null) {
       return AlertDialog(
         buttonPadding: const EdgeInsets.all(0),
         actionsPadding: const EdgeInsets.only(right: 20),
@@ -67,7 +67,7 @@ class _VolumeDialogState extends State<VolumeDialog> {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.1,
             child: Text(
-              widget.medium.ingredients['dH₂O']!.unit,
+              widget.medium.ingredients['volume']!.unit,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
