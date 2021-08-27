@@ -3,6 +3,11 @@
    <application
         android:label="Culture Media DB"
         android:icon="@mipmap/ic_launcher">
+        <!-- AdMob integration -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-1213028558697902~8785786232"
+            />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
