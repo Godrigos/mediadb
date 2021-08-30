@@ -56,12 +56,13 @@ class _ListScreenState extends State<ListScreen> {
             Expanded(
               child: listMedia(docs: docs, list: list),
             ),
-            Container(
-              child: AdWidget(ad: _ad),
-              width: _ad.size.width.toDouble(),
-              height: 72.0,
-              alignment: Alignment.center,
-            ),
+            if (_ad.responseInfo != null)
+              Container(
+                child: AdWidget(ad: _ad),
+                width: _ad.size.width.toDouble(),
+                height: 72.0,
+                alignment: Alignment.center,
+              ),
           ],
         ),
       ),
