@@ -17,12 +17,12 @@ import 'views/medium_detail_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
 
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
 
+  await MobileAds.instance.initialize();
   await Firebase.initializeApp();
   await Hive.initFlutter();
   Hive.registerAdapter(FavoriteAdapter());

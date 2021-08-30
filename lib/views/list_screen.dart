@@ -1,8 +1,44 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mediadb/widgets/list_Media.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class ListScreen extends StatelessWidget {
+import '/widgets/list_Media.dart';
+
+class ListScreen extends StatefulWidget {
+  @override
+  _ListScreenState createState() => _ListScreenState();
+}
+
+class _ListScreenState extends State<ListScreen> {
+  late BannerAd _ad;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _ad = BannerAd(
+      adUnitId: 'ca-app-pub-1213028558697902/1573263205',
+      size: AdSize.banner,
+      request: AdRequest(),
+      listener: BannerAdListener(
+        onAdLoaded: (_) {
+          setState(() {});
+        },
+        onAdFailedToLoad: (ad, error) {
+          // Releases an ad resource when it fails to load
+          ad.dispose();
+        },
+      ),
+    );
+    _ad.load();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _ad.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final Map args = ModalRoute.of(context)!.settings.arguments as Map;
@@ -15,7 +51,19 @@ class ListScreen extends StatelessWidget {
         title: Text(catTitle),
       ),
       body: SafeArea(
-        child: listMedia(docs: docs, list: list),
+        child: Column(
+          children: [
+            Expanded(
+              child: listMedia(docs: docs, list: list),
+            ),
+            Container(
+              child: AdWidget(ad: _ad),
+              width: _ad.size.width.toDouble(),
+              height: 72.0,
+              alignment: Alignment.center,
+            ),
+          ],
+        ),
       ),
     );
   }
