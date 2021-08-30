@@ -59,7 +59,8 @@ class _ListScreenState extends State<ListScreen> {
             if (_ad.responseInfo != null)
               Container(
                 child: AdWidget(ad: _ad),
-                width: _ad.size.width.toDouble(),
+                width: MediaQuery.of(context).size.width,
+                color: Colors.green[50],
                 height: 72.0,
                 alignment: Alignment.center,
               ),
