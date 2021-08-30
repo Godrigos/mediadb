@@ -60,6 +60,44 @@ class _VolumeDialogState extends State<VolumeDialog> {
                   keyboardType: TextInputType.numberWithOptions(
                     decimal: true,
                   ),
+                  onFieldSubmitted: (_) {
+                    if (double.parse(_multiplierController.text) == 0) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          backgroundColor: Colors.red[600],
+                          duration: const Duration(seconds: 2),
+                          content: Text(
+                            AppLocalizations.of(context)!.zero,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      );
+                    } else if (_multiplierController.text.isNotEmpty) {
+                      IngredientList(
+                        ingredients: multiply(
+                          widget.medium.ingredients,
+                          double.parse(_multiplierController.text),
+                        ),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          backgroundColor: Colors.green[600],
+                          duration: const Duration(seconds: 2),
+                          content: Text(
+                            AppLocalizations.of(context)!.updatedVolume,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    Navigator.of(context).pop();
+                  },
                 ),
               ),
             ),
