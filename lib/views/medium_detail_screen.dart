@@ -80,7 +80,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                   context,
                   IngredientList(ingredients: medium.ingredients),
                   MediaQuery.of(context).size.height * 0.25,
-                  MediaQuery.of(context).size.width * 0.9,
+                  MediaQuery.of(context).size.width * 0.95,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 5),
@@ -109,10 +109,10 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                   context,
                   StepsList(medium: medium),
                   MediaQuery.of(context).size.height * 0.38,
-                  MediaQuery.of(context).size.width * 0.9,
+                  MediaQuery.of(context).size.width * 0.95,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.90,
+                  width: MediaQuery.of(context).size.width * 0.95,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -239,7 +239,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                                     )
                                     .toList(),
                               ),
-                              width: MediaQuery.of(context).size.width * 0.9,
+                              width: MediaQuery.of(context).size.width * 0.95,
                             ),
                           )
                         ],

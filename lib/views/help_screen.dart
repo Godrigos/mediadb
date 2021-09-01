@@ -17,6 +17,23 @@ class HelpScreen extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 3),
                 child: Text(
+                  AppLocalizations.of(context)!.aboutApp,
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 10,
+                  right: 5,
+                ),
+                child: Text(
+                  AppLocalizations.of(context)!.aboutDetails,
+                  textAlign: TextAlign.justify,
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 3),
+                child: Text(
                   AppLocalizations.of(context)!.helpIcons,
                   style: Theme.of(context).textTheme.headline6,
                 ),
