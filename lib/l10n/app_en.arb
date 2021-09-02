@@ -115,7 +115,7 @@
     "@aboutApp": {
       "description": "About the application text title."
     },
-    "aboutDetails": "Culture Media DB brings a series of culture media recipes commonly used in microbiology experiments. It shows the ingredients and preparation details of each medium.\n\nThe references presented by the application are the source of information used by the developer and don't necessarily the source to be cited in scientific articles or reports.\n\n If you have any contribution to make such as bug report, enhancement sugestions or culture medium requirement. Plese, visit https://github.com/Godrigos/mediadb/issues and fill in the appropiate issue.\n\nThis application was made using Flutter.\n\nApplication icons made by Freepik from www.flaticon.com.\n",
+    "aboutDetails": "Culture Media DB brings a series of culture media recipes commonly used in microbiology experiments. It shows the ingredients and preparation details of each medium.\n\nThe references presented by the application are the source of information used by the developer and don't necessarily the source to be cited in scientific articles or reports.\n\n If you have any contribution to make such as bug reports, enhancement sugestions or culture medium requirement. Plese, visit https://github.com/Godrigos/mediadb/issues and fill in the appropiate issue.\n\nThis application was made using Flutter.\n\nApplication icons made by Freepik from www.flaticon.com.\n",
     "@aboutDetails": {
       "description": "About the application text."
     }
