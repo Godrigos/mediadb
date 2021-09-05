@@ -184,9 +184,9 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: SelectableText(
+                                  title: Text(
                                       AppLocalizations.of(context)!.reference),
-                                  content: Text(medium.reference),
+                                  content: SelectableText(medium.reference),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
