@@ -26,7 +26,7 @@ class HelpScreen extends StatelessWidget {
                   left: 10,
                   right: 5,
                 ),
-                child: Text(
+                child: SelectableText(
                   AppLocalizations.of(context)!.aboutDetails,
                   textAlign: TextAlign.justify,
                 ),

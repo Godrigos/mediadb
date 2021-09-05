@@ -118,7 +118,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          if (medium.use != '')
+                          if (medium.use.isNotEmpty)
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {
@@ -147,7 +147,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                       ),
                       IconButton(
                         onPressed: () {
-                          if (medium.ps != '')
+                          if (medium.ps.isNotEmpty)
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {
@@ -167,7 +167,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                               },
                             );
                         },
-                        icon: medium.ps != ''
+                        icon: medium.ps.isNotEmpty
                             ? Icon(
                                 Icons.info,
                                 color: Colors.green[600],
@@ -179,12 +179,12 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                       ),
                       IconButton(
                         onPressed: () {
-                          if (medium.reference != '')
+                          if (medium.reference.isNotEmpty)
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text(
+                                  title: SelectableText(
                                       AppLocalizations.of(context)!.reference),
                                   content: Text(medium.reference),
                                   actions: [
@@ -200,7 +200,7 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                               },
                             );
                         },
-                        icon: medium.reference != ''
+                        icon: medium.reference.isNotEmpty
                             ? Icon(
                                 Icons.article,
                                 color: Colors.green[600],
