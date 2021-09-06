@@ -19,7 +19,15 @@ class _ListScreenState extends State<ListScreen> {
     _ad = BannerAd(
       adUnitId: 'ca-app-pub-1213028558697902/1573263205',
       size: AdSize.banner,
-      request: AdRequest(),
+      request: AdRequest(
+        keywords: <String>[
+          'Biotechnology',
+          'Microbiology',
+          'Science',
+          'Laboratory',
+          'Research',
+        ],
+      ),
       listener: BannerAdListener(
         onAdLoaded: (_) {
           setState(() {});
