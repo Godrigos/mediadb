@@ -43,8 +43,8 @@ class _ListScreenState extends State<ListScreen> {
 
   @override
   void dispose() {
-    super.dispose();
     _ad.dispose();
+    super.dispose();
   }
 
   @override
