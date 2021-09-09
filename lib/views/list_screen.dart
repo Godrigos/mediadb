@@ -26,6 +26,7 @@ class _ListScreenState extends State<ListScreen> {
           'Science',
           'Laboratory',
           'Research',
+          'Education',
         ],
       ),
       listener: BannerAdListener(
