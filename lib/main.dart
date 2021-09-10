@@ -47,9 +47,9 @@ class MyApp extends StatelessWidget {
       ],
       theme: ThemeData(
         primarySwatch: Colors.green,
-        primaryColor: Colors.green[600],
         colorScheme: ThemeData.light().colorScheme.copyWith(
               secondary: Colors.greenAccent,
+              primary: Colors.green[600],
             ),
         fontFamily: 'RobotoCondensed',
         textTheme: ThemeData.light().textTheme.copyWith(
