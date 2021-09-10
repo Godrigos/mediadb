@@ -48,7 +48,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
         primaryColor: Colors.green[600],
-        accentColor: Colors.greenAccent,
+        colorScheme: ThemeData.light().colorScheme.copyWith(
+              secondary: Colors.greenAccent,
+            ),
         fontFamily: 'RobotoCondensed',
         textTheme: ThemeData.light().textTheme.copyWith(
               headline6: TextStyle(
@@ -62,13 +64,11 @@ class MyApp extends StatelessWidget {
               ),
             ),
         appBarTheme: AppBarTheme(
-          textTheme: ThemeData.light().textTheme.copyWith(
-                headline6: const TextStyle(
-                  fontFamily: 'RobotoCondensed',
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+          titleTextStyle: TextStyle(
+            fontFamily: 'RobotoCondensed',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       home: MyHomePage(),
