@@ -170,7 +170,9 @@ class _MediumDetailScreenState extends State<MediumDetailScreen> {
                         icon: medium.ps.isNotEmpty
                             ? Icon(
                                 Icons.info,
-                                color: Colors.green[600],
+                                color: medium.caution 
+                                  ? Colors.red[600] 
+                                  : Colors.green[600],
                               )
                             : Icon(
                                 Icons.info_outline,

@@ -15,6 +15,7 @@ class Medium {
   String ps;
   String use;
   String pH;
+  bool caution;
 
   Medium({
     required this.initials,
@@ -29,6 +30,7 @@ class Medium {
     this.ps = '',
     this.use = '',
     this.pH = '',
+    this.caution = false,
   });
 
   ExactAssetImage setBGImage() {
