@@ -32,7 +32,7 @@ class Medium {
     this.use = '',
     this.pH = '',
     this.caution = false,
-    this.cost = 0,
+    this.cost = 0.0,
   });
 
   ExactAssetImage setBGImage() {
