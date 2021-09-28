@@ -16,6 +16,7 @@ class Medium {
   String use;
   String pH;
   bool caution;
+  double cost;
 
   Medium({
     required this.initials,
@@ -31,6 +32,7 @@ class Medium {
     this.use = '',
     this.pH = '',
     this.caution = false,
+    this.cost = 0,
   });
 
   ExactAssetImage setBGImage() {
