@@ -28,7 +28,6 @@ Medium parseFirestoreMedia(
     use: doc.data().containsKey('use') ? doc.get('use') : '',
     pH: doc.data().containsKey('pH') ? doc.get('pH') : '',
     caution: doc.data().containsKey('caution') ? doc.get('caution') : false,
-    cost: doc.data().containsKey('cost') ? doc.get('cost') : 0.0,
   );
   return md;
 }
