@@ -83,7 +83,7 @@ class _ListScreenState extends State<ListScreen> {
               Container(
                 child: AdWidget(ad: _ad!),
                 width: _ad!.size.width.toDouble(),
-                color: Colors.green[50],
+                color: Colors.blueGrey[50],
                 height: _ad!.size.height.toDouble(),
                 alignment: Alignment.center,
               ),
