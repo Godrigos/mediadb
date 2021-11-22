@@ -10,15 +10,27 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
-  late BannerAd _ad;
+  BannerAd? _ad;
+  bool _isLoaded = false;
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _loadAd();
+  }
+
+  Future<void> _loadAd() async {
+    final AnchoredAdaptiveBannerAdSize? size =
+        await AdSize.getAnchoredAdaptiveBannerAdSize(
+            Orientation.portrait, MediaQuery.of(context).size.width.truncate());
+
+    if (size == null) {
+      return;
+    }
 
     _ad = BannerAd(
       adUnitId: 'ca-app-pub-1213028558697902/1573263205',
-      size: AdSize.banner,
+      size: size,
       request: AdRequest(
         keywords: <String>[
           'Biotechnology',
@@ -30,21 +42,23 @@ class _ListScreenState extends State<ListScreen> {
         ],
       ),
       listener: BannerAdListener(
-        onAdLoaded: (_) {
-          setState(() {});
+        onAdLoaded: (Ad ad) {
+          setState(() {
+            _ad = ad as BannerAd;
+            _isLoaded = true;
+          });
         },
-        onAdFailedToLoad: (ad, error) {
-          // Releases an ad resource when it fails to load
+        onAdFailedToLoad: (Ad ad, LoadAdError error) {
           ad.dispose();
         },
       ),
     );
-    _ad.load();
+    return _ad!.load();
   }
 
   @override
   void dispose() {
-    _ad.dispose();
+    _ad?.dispose();
     super.dispose();
   }
 
@@ -65,12 +79,12 @@ class _ListScreenState extends State<ListScreen> {
             Expanded(
               child: listMedia(docs: docs, list: list),
             ),
-            if (_ad.responseInfo != null)
+            if (_ad != null && _isLoaded)
               Container(
-                child: AdWidget(ad: _ad),
-                width: MediaQuery.of(context).size.width,
+                child: AdWidget(ad: _ad!),
+                width: _ad!.size.width.toDouble(),
                 color: Colors.green[50],
-                height: 72.0,
+                height: _ad!.size.height.toDouble(),
                 alignment: Alignment.center,
               ),
           ],
