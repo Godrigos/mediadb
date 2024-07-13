@@ -1,0 +1,122 @@
+{
+    "appTitle": "Culture Media",
+    "@appTitle": {
+      "description": "The application main screen title."
+    },
+    "close": "Close",
+    "@close": {
+      "description": "Close screen or notification."
+    },
+    "ingredients": "Ingredients",
+    "@ingredients": {
+      "description": "Culture media ingredients list."
+    },
+    "preparation": "Preparation",
+    "@preparation": {
+      "description": "Culture media preparation steps list."
+    },
+    "complementList": "Complements",
+    "@complementList": {
+      "description": "Complementary solutions list."
+    },
+    "ps": "P.S.",
+    "@ps": {
+      "description": "Post scriptum."
+    },
+    "reference": "Reference",
+    "@reference": {
+      "description": "Bibibliographic reference of the medium."
+    },
+    "complement": "Complementary solution to a medium.",
+    "@complement": {
+      "description": "Solution utilization."
+    },
+    "complementGrid": "Complementary Solution",
+    "@complementGrid": {
+      "description": "Title of a gridtile."
+    },
+    "liquid": "Liquid medium.",
+    "@liquid": {
+      "description": "A medium physical state."
+    },
+    "semisolid": "Semisolid medium.",
+    "@semisolid": {
+      "description": "A medium physical state."
+    },
+    "solid": "Solid medium.",
+    "@solid": {
+      "description": "A medium physical state."
+    },
+    "undefined": "Undefined medium physical state. A logical entry, should not appear in media list.",
+    "@undefined": {
+      "description": "A medium physical state."
+    },
+    "help": "About",
+    "@help": {
+      "description": "Help screen title."
+    },
+    "helpIcons": "Media Icons",
+    "@helpIcons": {
+      "description": "Title for media icons on help page."
+    },
+    "nothing": "No recipe available",
+    "@nothing": {
+      "description": "Show text if there is no item in this category."
+    },
+    "favorite": "Favorites",
+    "@favorite": {
+      "description": "Favorite category title."
+    },
+    "allmedia": "All Media",
+    "@allmedia": {
+      "description": "All Media category title."
+    },
+    "volume": "Desired volume",
+    "@volume": {
+      "description": "Desired medium volume for calculation."
+    },
+    "calculate": "Calculate",
+    "@calculate": {
+      "description": "Calculate button text."
+    },
+    "exit": "Exit",
+    "@exit": {
+      "description": "Exit button text."
+    },
+    "copy": "Copy",
+    "@copy": {
+      "description": "Copy button text."
+    },
+    "updatedVolume": "Ingredients amounts updated",
+    "@updatedVolume": {
+      "description": "Updated ingredients list snack bar text."
+    },
+    "validNumber": "Enter a valid number",
+    "@validNumber": {
+      "description": "Enter valid number snack bar text."
+    },
+    "zero": "Enter a value higher than zero",
+    "@zero": {
+      "description": "Zero snack bar text."
+    },
+    "error": "Error",
+    "@error": {
+      "description": "Error text title."
+    },
+    "errormsg": "This medium is missing some details.",
+    "@errormsg": {
+      "description": "Error text title."
+    },
+    "use": "Common Use",
+    "@use": {
+      "description": "Use button text."
+    },
+    "aboutApp": "About Culture Media DB",
+    "@aboutApp": {
+      "description": "About the application text title."
+    },
+    "aboutDetails": "Culture Media DB brings a series of culture media recipes commonly used in microbiology experiments. It shows the ingredients and preparation details of each medium.\n\nThe references presented by the application are the source of information used by the developer and don't necessarily the source to be cited in scientific articles or reports.\n\n If you have any contribution to make such as bug reports, enhancement sugestions or culture medium requirement. Plese, visit https://github.com/Godrigos/mediadb/issues and fill in the appropiate issue.\n\nThis application was made using Flutter.\n\nApplication icons made by Freepik from www.flaticon.com.\n",
+    "@aboutDetails": {
+      "description": "About the application text."
+    }
+}

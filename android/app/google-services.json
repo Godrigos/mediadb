@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1075059001436",
+    "project_id": "mediadb-74d4b",
+    "storage_bucket": "mediadb-74d4b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075059001436:android:4dab16919156f686ebbe99",
+        "android_client_info": {
+          "package_name": "com.github.Godrigos.mediadb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075059001436-t3je7k7i4f6cg83tll95qhoj8gp9s9d7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.github.Godrigos.mediadb",
+            "certificate_hash": "51cbea9e1e3f8bf1dedf8fd6211c17687138b5f3"
+          }
+        },
+        {
+          "client_id": "1075059001436-9j2g53tebmln3canfmem1pika9c26c0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0BE9iKhhS14eI7AFUe8q04BgIh_gE89Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075059001436-9j2g53tebmln3canfmem1pika9c26c0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-1213028558697902~8785786232"
+    }
+  ],
+  "configuration_version": "1"
+}
